@@ -9,11 +9,15 @@
 --         primary key(user_id)
 -- );
 
+-- ALTER TABLE user_login CONVERT TO CHARACTER SET utf8mb4;
+
 -- create table article_category (
 --         category_id int auto_increment not null,
 --         category varchar(50) not null,
 --         primary key(category_id)
 -- );
+
+-- ALTER TABLE article_category CONVERT TO CHARACTER SET utf8mb4;
 
 -- create table article (
 --         article_id int auto_increment not null,
@@ -29,6 +33,8 @@
 --         primary key(article_id)
 -- );
 
+-- ALTER TABLE article CONVERT TO CHARACTER SET utf8mb4;
+
 -- create table article_comment (
 --         comment_id int auto_increment not null,
 --         comment_for_article_id int not null,
@@ -39,7 +45,7 @@
 --         primary key(comment_id)
 -- );
 
-
+-- ALTER TABLE article_comment CONVERT TO CHARACTER SET utf8mb4;
 
 -- INSERT INTO article_category (category) values ("życiorys");
 -- INSERT INTO article_category (category) values ("opinia");
@@ -50,32 +56,39 @@
 -- INSERT INTO user_login (nickName, password ) values (
 --         'michalina',
 --         "$2a$12$uSknZ79hRVaobfJYobmPVO8LOUFLKl1Fk5e2HtcHdiLtc05OMZU1W"
--- ); // pass - qwerty123
+-- ); 
+-- -- // pass - qwerty123
 
 -- INSERT INTO user_login (nickName, password ) values (
 --         'esbeda',
 --         "$2a$12$5obW8X.QJo74JdnA.p/.qOE2T0LzwqN8uIK0a4VXj5JyQbiNFFyJa"
--- ); // pass - bedido
+-- ); 
+-- -- // pass - bedido
 
 -- INSERT INTO user_login (nickName, password ) values (
 --         'virtual',
 --         "$2a$12$DBRzhWQoGTdH4s4Lu7a8huw9gtFBlNJBt/t/DS4tKXFjSWlkp1oUa"
--- ); // pass - wersena
+-- ); 
+-- -- // pass - wersena
 
 -- INSERT INTO user_login (nickName, password ) values (
 --         'tibbera',
 --         "$2a$12$Qk.eHMIx2yNs7d0TGjtIpuZVsO1x2wIdoX7ONfm09GMzyc.ShH3um"
--- ); // pass - ber$wersa
+-- ); 
+-- -- // pass - ber$wersa
 
 -- INSERT INTO user_login (nickName, password ) values (
 --         'assertan',
 --         "$2a$12$TgLef2VGqn9LC/ufS14dJOKI0ePbrOzctWkinExickZ.f0t6Tk6g2"
--- ); // pass - n67we
+-- ); 
+-- -- // pass - n67we
 
 -- INSERT INTO user_login (nickName, password ) values (
 --         'pynerson',
 --         "$2a$12$MMHa51kHdCr7vSrwwbKcsuuIIuQbUTBno3kNYBaoFjAnhZtERe61."
--- ); // pass - tyr465ew
+-- ); 
+
+-- -- // pass - tyr465ew
 
 
 -- INSERT INTO article 
@@ -195,7 +208,17 @@
 -- ) values (
 --         "Prezydent dostanie 40 proc. podwyżki. Sejm podjął decyzję",
 --         "https://www.prezydent.pl/gfx/prezydent/userfiles3/images/.prezydent./do_pobrania/zaakceptowane2019/0152.jpg",
---         "Sejm przyjął dwie z czterech uchwalonych przez Senat poprawek do ustawy o wynagrodzeniu osób zajmujących kierownicze stanowiska państwowe. Poprawki te dotyczą doprecyzowania niektórych zasad naliczania wynagrodzeń. Ustawa przyznaje podwyżki m.in. samorządowcom oraz prezydentowi. Głowa państwa zarobi dzięki nim o 40 proc. więcej.Podczas piątkowych obrad Sejm głosował nad przyjęciem bądź odrzuceniem zgłoszonych przez Senat poprawek do uchwalonej w sierpniu nowelizacji ustawy o wynagrodzeniu osób zajmujących kierownicze stanowiska państwowe. Sejmowa Komisja Finansów publicznych zaopiniowała przyjęcie dwóch z czterech senackich poprawek, które doprecyzowały zasady naliczania wynagrodzeń dla wymienionych w ustawie osób zajmujących kierownicze stanowiska państwowe. Nowelizacja ustawy o wynagrodzeniu osób zajmujących kierownicze stanowiska państwowe została uchwalona przez Sejm 11 sierpnia. Dokonuje ona zmian w systemie wynagradzania prezydenta oraz byłych prezydentów, a także zasad ustalania maksymalnej wysokości diet lub wynagrodzeń w samorządzie terytorialnym wszystkich szczebli.",
+--         "Sejm przyjął dwie z czterech uchwalonych przez Senat poprawek do ustawy o wynagrodzeniu osób zajmujących 
+--         kierownicze stanowiska państwowe. Poprawki te dotyczą doprecyzowania niektórych zasad naliczania wynagrodzeń. 
+--         Ustawa przyznaje podwyżki m.in. samorządowcom oraz prezydentowi. Głowa państwa zarobi dzięki nim o 40 proc. 
+--         więcej.Podczas piątkowych obrad Sejm głosował nad przyjęciem bądź odrzuceniem zgłoszonych przez Senat 
+--         poprawek do uchwalonej w sierpniu nowelizacji ustawy o wynagrodzeniu osób zajmujących kierownicze stanowiska 
+--         państwowe. Sejmowa Komisja Finansów publicznych zaopiniowała przyjęcie dwóch z czterech senackich poprawek, 
+--         które doprecyzowały zasady naliczania wynagrodzeń dla wymienionych w ustawie osób zajmujących kierownicze 
+--         stanowiska państwowe. Nowelizacja ustawy o wynagrodzeniu osób zajmujących kierownicze stanowiska państwowe 
+--         została uchwalona przez Sejm 11 sierpnia. Dokonuje ona zmian w systemie wynagradzania prezydenta oraz 
+--         byłych prezydentów, a także zasad ustalania maksymalnej wysokości diet lub wynagrodzeń w samorządzie 
+--         terytorialnym wszystkich szczebli.",
 --         5,
 --         '2021-05-20',
 --         '2021-06-23',
@@ -214,7 +237,17 @@
 -- ) values (
 --         "Sposób na ślimaka. Jak się go pozbyć z ogrodu?",
 --         "https://www.prezydent.pl/gfx/prezydent/userfiles3/images/.prezydent./do_pobrania/zaakceptowane2019/0152.jpg",
---         "Zacznijmy od tego, że nie wszystkie ślimaki można uznać za szkodniki. Te z muszelkami są raczej niegroźne. Większość jest nawet pod ochroną. Natomiast głównymi niszczycielami naszych grządek i klombów są ślimaki nagie lądowe, których w Polsce żyje około 30 gatunków. Co ciekawe one też posiadają skorupę. Ukrytą wewnątrz ciała, pod skórą. Naukowe nazwy najbardziej łakomych to m.in. ślinik pospolity i wielki, pomrowik plamisty. Jak je rozpoznać? Ślinik pospolity (Arion vulgaris) – nierzadko mylnie opisywany jako ślinik luzytański, który w Polsce nie występuje) – jako dorosły osobnik ma zwykle ceglaste aż po brunatne ubarwienie (kolor zależy od jedzenia i miejsca bytowania) i może osiągnąć nawet 12 centymetrów długości. Bardzo podobny i dla laika trudny do odróżnienia jest ślinik wielki (Arion rufus), ale jest większy i może mierzyć do 15 centymetrów. Pomrowik plamisty (Deroceras reticulatum) ma maksymalnie 4,5 centymetra długości, zabarwienie kremowe, a jego znakami rozpoznawczymi są brunatne lub czarne plamki zarówno na płaszczu, jak i po bokach.",
+--         "Zacznijmy od tego, że nie wszystkie ślimaki można uznać za szkodniki. Te z muszelkami są raczej niegroźne. 
+--         Większość jest nawet pod ochroną. Natomiast głównymi niszczycielami naszych grządek i klombów są ślimaki 
+--         nagie lądowe, których w Polsce żyje około 30 gatunków. Co ciekawe one też posiadają skorupę. Ukrytą 
+--         wewnątrz ciała, pod skórą. Naukowe nazwy najbardziej łakomych to m.in. ślinik pospolity i wielki, 
+--         pomrowik plamisty. Jak je rozpoznać? Ślinik pospolity (Arion vulgaris) – nierzadko mylnie opisywany 
+--         jako ślinik luzytański, który w Polsce nie występuje) – jako dorosły osobnik ma zwykle ceglaste aż 
+--         po brunatne ubarwienie (kolor zależy od jedzenia i miejsca bytowania) i może osiągnąć nawet 12 centymetrów 
+--         długości. Bardzo podobny i dla laika trudny do odróżnienia jest ślinik wielki (Arion rufus), ale jest 
+--         większy i może mierzyć do 15 centymetrów. Pomrowik plamisty (Deroceras reticulatum) ma maksymalnie 4,5 
+--         centymetra długości, zabarwienie kremowe, a jego znakami rozpoznawczymi są brunatne lub czarne plamki 
+--         zarówno na płaszczu, jak i po bokach.",
 --         4,
 --         '2021-07-20',
 --         '2021-07-23',
@@ -233,9 +266,610 @@
 -- ) values (
 --         "Wampir z Krakowa - potwór, przed którym drżało całe miasto",
 --         "https://www.prezydent.pl/gfx/prezydent/userfiles3/images/.prezydent./do_pobrania/zaakceptowane2019/0152.jpg",
---         "Karol Kot urodził się 18 grudnia 1946 r. w Krakowie. Wychowywał się w inteligenckiej rodzinie na krakowskim Kazimierzu, w kamienicy nr 2 przy ul. Meiselsa. Karol nie chodził do przedszkola, ponieważ rodziców stać było na to, aby uczyć go samodzielnie. Chłopca, między pracą a domowymi obowiązkami, wychowywała matka. Kiedy Karol skończył osiem lat, na świat przyszła jego młodsza siostra. Karol od momentu, kiedy zauważył, że rodzice zaczęli ją faworyzować, regularnie znęcał się nad swoją siostrą. Był to czas, w którym Karol po raz pierwszy zaczął używać przemocy wobec drugiego człowieka. Czując się niekochany przez rodziców, chłopiec zaczął uciekać w świat chorych fantazji o znęcaniu się nad kobietami."
+--         "Karol Kot urodził się 18 grudnia 1946 r. w Krakowie. Wychowywał się w inteligenckiej rodzinie na krakowskim 
+--         Kazimierzu, w kamienicy nr 2 przy ul. Meiselsa. Karol nie chodził do przedszkola, ponieważ rodziców stać 
+--         było na to, aby uczyć go samodzielnie. Chłopca, między pracą a domowymi obowiązkami, wychowywała matka. 
+--         Kiedy Karol skończył osiem lat, na świat przyszła jego młodsza siostra. Karol od momentu, kiedy zauważył, 
+--         że rodzice zaczęli ją faworyzować, regularnie znęcał się nad swoją siostrą. Był to czas, w którym Karol po 
+--         raz pierwszy zaczął używać przemocy wobec drugiego człowieka. Czując się niekochany przez rodziców, chłopiec 
+--         zaczął uciekać w świat chorych fantazji o znęcaniu się nad kobietami.",
 --         4,
 --         '2021-02-20',
 --         '2021-04-23',
 --         3
+-- );
+
+
+-- INSERT INTO article 
+-- (
+--         article_header,
+--         article_src,
+--         article_text,
+--         article_category_id,
+--         article_created,
+--         article_updated,
+--         article_owner_id
+-- ) values (
+--         "Szef OZZL: Będą nas leczyli ludzie, którzy są 60 godzinę w pracy",
+--         "https://www.prezydent.pl/gfx/prezydent/userfiles3/images/.prezydent./do_pobrania/zaakceptowane2019/0152.jpg",
+--         "Niech pójdą do jakiegoś szpitala i powiedzą to lekarzom prosto w twarz. W szpitalnictwie jest tak mało pieniędzy, 
+--         że cudem jest, iż to jeszcze funkcjonuje. Nie ma mydła w łazienkach, klimatyzacja w gabinetach lekarskich, 
+--         a nieraz nawet na salach operacyjnych jest luksusem. Cieszymy się, że jest papier toaletowy. Lekarze zatrudnieni 
+--         na umowę o pracę otrzymują zatem - podobnie jak ja - minimalną płacę ustawową dla lekarzy, czyli obecnie 6769 zł 
+--         pensji zasadniczej. Minister zdrowia Adam Niedzielski w wywiadzie z WP wskazał, że lekarz zarabia średnio 25 tys. 
+--         zł miesięcznie, a mediana wynosi 16,6 tys. zł miesięcznie. Godnie. Klasyczna manipulacja. Minister zdrowia podaje 
+--         dane z PIT-ów, w których uwzględnione są zarobki ze wszystkich źródeł. W tej statystyce są uwzględnieni też przedsiębiorcy-lekarze, 
+--         np. właściciele klinik. Ale przecież nikt nie mówi, że lekarz nie jest w stanie dobrze zarobić. My mówimy, że lekarz, aby 
+--         dobrze zarobić, musi pracować po 300-350 godzin miesięcznie. Musi pracować w kilku miejscach, dorabiać. Być cały czas zmęczony.",
+--         1,
+--         '2019-02-20',
+--         '2020-04-23',
+--         2
+-- );
+
+-- INSERT INTO article 
+-- (
+--         article_header,
+--         article_src,
+--         article_text,
+--         article_category_id,
+--         article_created,
+--         article_updated,
+--         article_owner_id
+-- ) values (
+--         "Mocny komentarz po brązowym medalu Polaków. 'Sukcesu nie odnieśliśmy' ",
+--         "https://www.prezydent.pl/gfx/prezydent/userfiles3/images/.prezydent./do_pobrania/zaakceptowane2019/0152.jpg",
+--         "To, co przede wszystkim zostanie w pamięci polskich kibiców, to efektowna wygrana 3:0 z Serbami na koniec turnieju. 
+--         Olbrzymie wrażenie zrobiło też pewne zwycięstwo z Rosjanami. Reprezentacja Polski podczas całego turnieju, którego 
+--         była współgospodarzem, przegrała tyko jedno spotkanie. W półfinale ze Słowenią - 1:3. Jednak to właśnie ta porażka 
+--         sprawiła, że Polacy nie mogli walczyć w meczu o tytuł. - Obecny trener bądź jego następca musi się zastanowić, czy 
+--         drużyna dotrwa w takiej formie do igrzysk za trzy lata. Mamy najlepszych zawodników na świecie, a w pewnych 
+--         momentach nie stanowią drużyny. Czy w takiej formie ten zespół przetrwa? Może być kłopot - twierdzi Bosek w 
+--         rozmowie z WP SportoweFakty.",
+--         2,
+--         '2020-03-20',
+--         '2020-04-23',
+--         1
+-- );
+
+-- INSERT INTO article 
+-- (
+--         article_header,
+--         article_src,
+--         article_text,
+--         article_category_id,
+--         article_created,
+--         article_updated,
+--         article_owner_id
+-- ) values (
+--         "Kradną paliwo na stacjach. 'Zatankował za 800 zł, zapłacił za hot doga i odjechał' ",
+--         "https://www.prezydent.pl/gfx/prezydent/userfiles3/images/.prezydent./do_pobrania/zaakceptowane2019/0152.jpg",
+--         "Są stacje na których, do kradzieży paliwa dochodzi nagminnie, nawet trzy - cztery razy w miesiącu. Kierowca podjeżdża, 
+--         tankuje do pełna, zakręci się na stacji, czasem nawet kupi jakiś drobiazg. Wraca do auta i odjeżdża. Według danych 
+--         Polskiej Organizacji Przemysłu i Handlu Naftowego w Polsce co roku dochodzi do około 100 tysięcy przypadków kradzieży 
+--         na stacjach benzynowych, w tym tzw. sklepowych. Łupem złodziei pada paliwo o wartości 20 mln zł. - Robią to 'na bezczela'. 
+--         Maseczka na twarzy, w końcu pandemia. Okulary, bo słońce w drodze przeszkadza. Kiedyś to przykręcali kradzione tablice, 
+--         albo zaklejali je fałszywymi numerami, teraz nawet tego się im nie chce. Jeśli nawet stacja ma monitoring, to na 
+--         niewiele się zda. Karalność jest tak niska, że złodzieje się nie boją - relacjonuje pan Tomasz, kierownik kilku 
+--         stacji prywatnej sieci na Dolnym Śląsku.",
+--         5,
+--         '2021-07-20',
+--         '2021-07-23',
+--         4
+-- );
+
+-- INSERT INTO article 
+-- (
+--         article_header,
+--         article_src,
+--         article_text,
+--         article_category_id,
+--         article_created,
+--         article_updated,
+--         article_owner_id
+-- ) values (
+--         "'To nowość w występach Szczęsnego'. Włosi piszą o cudzie z udziałem polskiego bramkarza",
+--         "https://www.prezydent.pl/gfx/prezydent/userfiles3/images/.prezydent./do_pobrania/zaakceptowane2019/0152.jpg",
+--         "Po serii niezbyt udanych meczów, polski bramkarz znów przypomniał fanom Juventusu, że jest fachowcem w swojej pracy. 
+--         Zresztą ci przywitali go niezwykle gorąco przed klasykiem Serie A z Milanem (1:1). 'Stara Dama' doskonale zaczęła, bo już w 
+--         4 minucie trafił Alvaro Morata. Długo goście nie mogli doprowadzić do remisu. Udało się to po trafieniu Ante Rebicia po 
+--         rzucie rożnym w 76. minucie - Szczęsny był bez szans.",
+--         3,
+--         '2021-04-23',
+--         '2021-04-23',
+--         2
+-- );
+
+-- INSERT INTO article 
+-- (
+--         article_header,
+--         article_src,
+--         article_text,
+--         article_category_id,
+--         article_created,
+--         article_updated,
+--         article_owner_id
+-- ) values (
+--         " 'Fakty' inne niż zwykle. Wyraźny sygnał dla widzów TVN24",
+--         "https://www.prezydent.pl/gfx/prezydent/userfiles3/images/.prezydent./do_pobrania/zaakceptowane2019/0152.jpg",
+--         "Prowadząca 'Faktów' Diana Rudnik w niedzielę 18 września zakończyła wydanie inaczej niż zwykle. Dziennikarka przypomniała,
+--         że do wygaśnięcia koncesji TVN24 pozostał tydzień. Po chwili na ekranach pojawiła się czarna plansza z tą informacją. Przypomnijmy, 
+--         że TVN24 od 19 miesięcy zabiega, aby Krajowa Radia Radiofonii i Telewizji przyznała jej rekoncesję. 
+--         Oficjalnie 26 września dotychczasowa koncesja straci ważność. Włodarze stacji zadbali już o pozyskanie 
+--         holenderskiej koncesji, która miałaby umożliwić im kontynuowanie nadawania, lecz cały czas oczekują na 
+--         decyzję polskiego podmiotu.",
+--         1,
+--         '2020-09-20',
+--         '2021-01-23',
+--         1
+-- );
+
+-- INSERT INTO article 
+-- (
+--         article_header,
+--         article_src,
+--         article_text,
+--         article_category_id,
+--         article_created,
+--         article_updated,
+--         article_owner_id
+-- ) values (
+--         "Wybory w Rosji. Rośnie wynik partii Putina. Opozycja: oszustwo",
+--         "https://www.prezydent.pl/gfx/prezydent/userfiles3/images/.prezydent./do_pobrania/zaakceptowane2019/0152.jpg",
+--         "Po przeliczeniu 70 proc. głosów w wyborach do Dumy Państwowej rządząca partia Jedna Rosja zdobywa ponad 48 proc. 
+--         głosów. Do parlamentu wejdą jeszcze cztery partie. Na drugim miejscu jest Komunistyczna Partia Federacji Rosyjskiej, 
+--         której przypadło ok. 20 proc. głosów. Kolejne miejsca zajmują: populistyczno-nacjonalistyczna Liberalno-Demokratyczna 
+--         Partia Rosji, dowodzona przez Władimira Żyrinowskiego (niecałe 8 proc.), Sprawiedliwa Rosja (ok. 7,5 proc. głosów) 
+--         i partia Nowi Ludzie (nieco ponad 5 proc.). Opozycja skupiona wokół Aleksieja Nawalnego mówi o oszustwie wyborczym.",
+--         1,
+--         '2020-11-20',
+--         '2020-12-23',
+--         4
+-- );
+
+-- INSERT INTO article 
+-- (
+--         article_header,
+--         article_src,
+--         article_text,
+--         article_category_id,
+--         article_created,
+--         article_updated,
+--         article_owner_id
+-- ) values (
+--         "Ojciec Andrzeja Dudy o homoseksualizmie. Lawina komentarzy",
+--         "https://www.prezydent.pl/gfx/prezydent/userfiles3/images/.prezydent./do_pobrania/zaakceptowane2019/0152.jpg",
+--         " 'Człowiek powinien pracować nad sobą, zdawać sobie sprawę z tego, jakie są konsekwencje jego uwarunkowań naturalnych i 
+--         starać się wykorzystać predyspozycje biologiczne, by osiągać to, czego większość z nas chce, czyli mieć ciepły dom, dzieci, 
+--         rodzinę' - mówił w wywiadzie dla 'Newsweeka' prof. Jan Duda, przewodniczący Sejmiku Województwa Małopolskiego, a 
+--         prywatnie ojciec prezydenta Andrzeja Dudy. Powołał się na badanie, opublikowane w 'Science Magazine', z którego wynika, 
+--         że tylko od 8 do 25 proc. osób uzasadnia swoje skłonności nieheteronormatywne przyczynami genetycznymi, reszta ma zależeć 
+--         od czynników kulturalnych lub związanych z hormonami. Na tej podstawie stwierdził, że 'czynniki kulturowe to efekty 
+--         promowania tych skłonności'. 'Po prostu homoseksualizm jest w znacznym stopniu zjawiskiem zaraźliwym. Twierdzenie, 
+--         że płeć to jest kwestia wyboru, które staje się u nas modne, utrudnia dzieciom rozwój psychofizyczny '- mówił dalej.",
+--         1,
+--         '2021-05-20',
+--         '2021-05-23',
+--         2
+-- );
+
+-- INSERT INTO article 
+-- (
+--         article_header,
+--         article_src,
+--         article_text,
+--         article_category_id,
+--         article_created,
+--         article_updated,
+--         article_owner_id
+-- ) values (
+--         "Doskonały przepis na ziemniaki pieczone w jogurcie",
+--         "https://www.prezydent.pl/gfx/prezydent/userfiles3/images/.prezydent./do_pobrania/zaakceptowane2019/0152.jpg",
+--         "Propozycja na pyszny obiad lub kolację bez ani grama tłuszczu. Tak przygotowane ziemniaki są też 
+--         idealnym dodatkiem do każdego mięsa. Sekretnym składnikiem tego dnia jest jogurt naturalny, w którym 
+--         obtacza się warzywo przed upieczeniem. Potrzebny będzie także rękaw do pieczenia. Ważne jest, aby nożykiem 
+--         zrobić kilka malutkich dziurek w folii. Następnie wstawiamy do piekarnika rozgrzanego do 180 stopni z 
+--         termoobiegiem i pieczemy przez ok 45 min. Rozcinamy rękaw od góry i pieczemy jeszcze ok 15-20 minut. 
+--         Wszystko do momentu aż ziemniaki się ładnie przyrumienią. I gotowe! Chcesz poznać więcej przepisów, 
+--         zajrzyj na Swojskie jedzonko.",
+--         2,
+--         '2021-02-20',
+--         '2021-04-23',
+--         1
+-- );
+
+-- INSERT INTO article_comment 
+-- (
+--         comment_for_article_id,
+--         comment_owner_id,
+--         comment
+-- ) values (
+--         1,
+--         1,
+--         "Świetny blog !"
+-- );
+
+-- INSERT INTO article_comment 
+-- (
+--         comment_for_article_id,
+--         comment_owner_id,
+--         comment
+-- ) values (
+--         1,
+--         4,
+--         "Świetny blog !"
+-- );
+
+-- INSERT INTO article_comment 
+-- (
+--         comment_for_article_id,
+--         comment_owner_id,
+--         comment
+-- ) values (
+--         1,
+--         4,
+--         "Świetny blog !"
+-- );
+
+-- INSERT INTO article_comment 
+-- (
+--         comment_for_article_id,
+--         comment_owner_id,
+--         comment
+-- ) values (
+--         2,
+--         1,
+--         "Świetny blog !"
+-- );
+
+-- INSERT INTO article_comment 
+-- (
+--         comment_for_article_id,
+--         comment_owner_id,
+--         comment
+-- ) values (
+--         2,
+--         2,
+--         "Świetny blog !"
+-- );
+
+-- INSERT INTO article_comment 
+-- (
+--         comment_for_article_id,
+--         comment_owner_id,
+--         comment
+-- ) values (
+--         2,
+--         4,
+--         "Świetny blog !"
+-- );
+
+-- INSERT INTO article_comment 
+-- (
+--         comment_for_article_id,
+--         comment_owner_id,
+--         comment
+-- ) values (
+--         2,
+--         5,
+--         "Świetny blog !"
+-- );
+
+-- INSERT INTO article_comment 
+-- (
+--         comment_for_article_id,
+--         comment_owner_id,
+--         comment
+-- ) values (
+--         3,
+--         2,
+--         "Świetny blog !"
+-- );
+
+-- INSERT INTO article_comment 
+-- (
+--         comment_for_article_id,
+--         comment_owner_id,
+--         comment
+-- ) values (
+--         3,
+--         1,
+--         "Świetny blog !"
+-- );
+
+-- INSERT INTO article_comment 
+-- (
+--         comment_for_article_id,
+--         comment_owner_id,
+--         comment
+-- ) values (
+--         3,
+--         4,
+--         "Świetny blog !"
+-- );
+
+-- INSERT INTO article_comment 
+-- (
+--         comment_for_article_id,
+--         comment_owner_id,
+--         comment
+-- ) values (
+--         3,
+--         3,
+--         "Świetny blog !"
+-- );
+
+-- INSERT INTO article_comment 
+-- (
+--         comment_for_article_id,
+--         comment_owner_id,
+--         comment
+-- ) values (
+--         4,
+--         2,
+--         "Świetny blog !"
+-- );
+
+-- INSERT INTO article_comment 
+-- (
+--         comment_for_article_id,
+--         comment_owner_id,
+--         comment
+-- ) values (
+--         4,
+--         1,
+--         "Świetny blog !"
+-- );
+
+-- INSERT INTO article_comment 
+-- (
+--         comment_for_article_id,
+--         comment_owner_id,
+--         comment
+-- ) values (
+--         4,
+--         5,
+--         "Świetny blog !"
+-- );
+
+-- INSERT INTO article_comment 
+-- (
+--         comment_for_article_id,
+--         comment_owner_id,
+--         comment
+-- ) values (
+--         5,
+--         4,
+--         "Świetny blog !"
+-- );
+
+-- INSERT INTO article_comment 
+-- (
+--         comment_for_article_id,
+--         comment_owner_id,
+--         comment
+-- ) values (
+--         5,
+--         1,
+--         "Świetny blog !"
+-- );
+
+-- INSERT INTO article_comment 
+-- (
+--         comment_for_article_id,
+--         comment_owner_id,
+--         comment
+-- ) values (
+--         6,
+--         1,
+--         "Świetny blog !"
+-- );
+
+-- INSERT INTO article_comment 
+-- (
+--         comment_for_article_id,
+--         comment_owner_id,
+--         comment
+-- ) values (
+--         6,
+--         3,
+--         "Świetny blog !"
+-- );
+
+-- INSERT INTO article_comment 
+-- (
+--         comment_for_article_id,
+--         comment_owner_id,
+--         comment
+-- ) values (
+--         6,
+--         4,
+--         "Świetny blog !"
+-- );
+
+-- INSERT INTO article_comment 
+-- (
+--         comment_for_article_id,
+--         comment_owner_id,
+--         comment
+-- ) values (
+--         7,
+--         1,
+--         "Świetny blog !"
+-- );
+
+-- INSERT INTO article_comment 
+-- (
+--         comment_for_article_id,
+--         comment_owner_id,
+--         comment
+-- ) values (
+--         7,
+--         3,
+--         "Świetny blog !"
+-- );
+
+-- INSERT INTO article_comment 
+-- (
+--         comment_for_article_id,
+--         comment_owner_id,
+--         comment
+-- ) values (
+--         8,
+--         2,
+--         "Świetny blog !"
+-- );
+
+-- INSERT INTO article_comment 
+-- (
+--         comment_for_article_id,
+--         comment_owner_id,
+--         comment
+-- ) values (
+--         8,
+--         5,
+--         "Świetny blog !"
+-- );
+
+-- INSERT INTO article_comment 
+-- (
+--         comment_for_article_id,
+--         comment_owner_id,
+--         comment
+-- ) values (
+--         9,
+--         3,
+--         "Świetny blog !"
+-- );
+
+-- INSERT INTO article_comment 
+-- (
+--         comment_for_article_id,
+--         comment_owner_id,
+--         comment
+-- ) values (
+--         9,
+--         2,
+--         "Świetny blog !"
+-- );
+
+-- INSERT INTO article_comment 
+-- (
+--         comment_for_article_id,
+--         comment_owner_id,
+--         comment
+-- ) values (
+--         10,
+--         1,
+--         "Świetny blog !"
+-- );
+
+-- INSERT INTO article_comment 
+-- (
+--         comment_for_article_id,
+--         comment_owner_id,
+--         comment
+-- ) values (
+--         10,
+--         2,
+--         "Świetny blog !"
+-- );
+
+-- INSERT INTO article_comment 
+-- (
+--         comment_for_article_id,
+--         comment_owner_id,
+--         comment
+-- ) values (
+--         11,
+--         3,
+--         "Świetny blog !"
+-- );
+
+-- INSERT INTO article_comment 
+-- (
+--         comment_for_article_id,
+--         comment_owner_id,
+--         comment
+-- ) values (
+--         11,
+--         1,
+--         "Świetny blog !"
+-- );
+
+-- INSERT INTO article_comment 
+-- (
+--         comment_for_article_id,
+--         comment_owner_id,
+--         comment
+-- ) values (
+--         12,
+--         3,
+--         "Świetny blog !"
+-- );
+
+-- INSERT INTO article_comment 
+-- (
+--         comment_for_article_id,
+--         comment_owner_id,
+--         comment
+-- ) values (
+--         12,
+--         6,
+--         "Świetny blog !"
+-- );
+
+-- INSERT INTO article_comment 
+-- (
+--         comment_for_article_id,
+--         comment_owner_id,
+--         comment
+-- ) values (
+--         13,
+--         6,
+--         "Świetny blog !"
+-- );
+
+-- INSERT INTO article_comment 
+-- (
+--         comment_for_article_id,
+--         comment_owner_id,
+--         comment
+-- ) values (
+--         13,
+--         2,
+--         "Świetny blog !"
+-- );
+
+-- INSERT INTO article_comment 
+-- (
+--         comment_for_article_id,
+--         comment_owner_id,
+--         comment
+-- ) values (
+--         14,
+--         1,
+--         "Świetny blog !"
+-- );
+
+-- INSERT INTO article_comment 
+-- (
+--         comment_for_article_id,
+--         comment_owner_id,
+--         comment
+-- ) values (
+--         14,
+--         2,
+--         "Świetny blog !"
+-- );
+
+-- INSERT INTO article_comment 
+-- (
+--         comment_for_article_id,
+--         comment_owner_id,
+--         comment
+-- ) values (
+--         14,
+--         3,
+--         "Świetny blog !"
 -- );
