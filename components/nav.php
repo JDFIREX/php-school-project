@@ -1,7 +1,7 @@
 <header>
-    <h1>Blog</h1>
 
     <div class='nav' >
+        <h1>Blog</h1>
         <?php 
             $url = $_SESSION['mainLink'];
             echo "<a href='$url' >Główna</a>";
