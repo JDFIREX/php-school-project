@@ -16,6 +16,59 @@ body {
   padding: 1rem 8vw;
 }
 
+@-webkit-keyframes showUp {
+  0% {
+    left: -500px;
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    left: .5rem;
+  }
+}
+
+@keyframes showUp {
+  0% {
+    left: -500px;
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    left: .5rem;
+  }
+}
+
+.correct-mess, .warning-mess {
+  position: fixed;
+  bottom: .5rem;
+  left: .5rem;
+  width: 200px;
+  height: 75px;
+  border-radius: 15px;
+  background-color: #3b3636;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-animation: showUp 1s 1;
+          animation: showUp 1s 1;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.correct-mess p, .warning-mess p {
+  color: white;
+}
+
 header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -51,13 +104,6 @@ header .nav, header .logged {
 
 header .nav a, header .logged a {
   margin: 0 1rem;
-  -webkit-transition: all .3s ease-in-out;
-  transition: all .3s ease-in-out;
-  margin-bottom: -1px;
-}
-
-header .nav a:hover, header .logged a:hover {
-  border-bottom: 1px solid blue;
 }
 
 .Login {
@@ -133,6 +179,15 @@ header .nav a:hover, header .logged a:hover {
       -ms-flex-pack: center;
           justify-content: center;
   gap: 2rem;
+}
+
+.Login form .buttons button:disabled {
+  background-color: #b6b6b6;
+  cursor: not-allowed;
+}
+
+.Login form .buttons button:disabled:hover {
+  background-color: #b6b6b6;
 }
 
 .Login form .buttons button, .Login form .buttons a {

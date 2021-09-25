@@ -18,13 +18,33 @@ $db = mysqli_select_db($server, 'jonatanblog');
     <link rel="stylesheet" href="./../main.css">
 </head>
 <body>
+
+    <script>
+
+        function startCount(e) {
+            const popUp = document.querySelector(".popup");
+
+            setTimeout(() => {
+
+                popUp.style.left = "-500px";
+                popUp.style.opacity = "0";
+
+                setTimeout(() => {
+                    popUp.remove()
+                }, 1000);
+
+            }, 5000);
+
+        }
+
+    </script>
     
     <?php include("../components/nav.php") ?>
 
     <section class="Login">
         <h3>Zaloguj się</h3>
 
-        <form method="post">
+        <form method="post" action="./zaloguj.php">
             <fieldset>
                 <legend>Login</legend>
                 <input type="text" name="text" id="text">
@@ -36,7 +56,7 @@ $db = mysqli_select_db($server, 'jonatanblog');
             </fieldset>
 
             <div class="buttons">
-                <button type="submit">
+                <button id='login' type="submit" disabled>
                     Zaloguj się
                 </button>
                 <a href="">Załóż konto</a>
@@ -47,7 +67,6 @@ $db = mysqli_select_db($server, 'jonatanblog');
     <?php 
     
         if(isset($_POST['text']) && isset($_POST['password']) ){
-            echo "log in ";
 
             $login = $_POST['text'];
 
@@ -55,10 +74,22 @@ $db = mysqli_select_db($server, 'jonatanblog');
 
             $r = mysqli_query($server,$q);
 
+            if(mysqli_num_rows($r) == 0){
+                echo "<div class='popup warning-mess'>";
+                echo "<script> startCount() </script>";
+                echo "<p> Podałeś zły login !!</p>";
+                echo "</div>";
+            }
+
             while($d = mysqli_fetch_array($r)){
 
                 if(password_verify($_POST['password'],$d['password'])){
-                    echo "pass correct !!";
+                    // login pass
+                } else {
+                    echo "<div class='popup warning-mess' >";
+                    echo "<p> Podałeś złe hasło !!</p>";
+                    echo "<script> startCount() </script>";
+                    echo "</div>";
                 }
 
             }
@@ -67,6 +98,9 @@ $db = mysqli_select_db($server, 'jonatanblog');
     
     
     ?>
+
+
+    <script src="./zaloguj.js" ></script>
 
 </body>
 </html>

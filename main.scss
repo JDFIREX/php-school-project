@@ -16,6 +16,41 @@ body{
     padding: 1rem 8vw;
 }
 
+
+@keyframes showUp {
+    0% {
+        left: -500px;
+        opacity: 0;
+    }
+
+    70%{
+        opacity: 0;
+    }
+
+    100%{
+        left: .5rem;
+    }
+}
+
+.correct-mess, .warning-mess{
+    position: fixed;
+    bottom: .5rem;
+    left : .5rem;
+    width: 200px;
+    height: 75px;
+    border-radius: 15px;
+    background-color: rgb(59, 54, 54);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: showUp 1s 1;
+    transition:  all .5s ease-in-out;
+
+    p{
+        color: white;
+    }
+}
+
 header{
 
     display : flex;
@@ -38,13 +73,6 @@ header{
         align-items: center;
         a{
             margin: 0 1rem;
-            transition: all .3s ease-in-out;
-            margin-bottom: -1px;
-
-
-            &:hover{
-                border-bottom: 1px solid blue;
-            }
         }
     }
 
@@ -97,6 +125,15 @@ header{
             align-items: center;
             justify-content: center;
             gap: 2rem;
+
+            button:disabled{
+                background-color: rgb(182, 182, 182);
+                cursor: not-allowed;
+
+                &:hover{
+                    background-color: rgb(182, 182, 182);
+                }
+            }
 
             button,a{
                 border: none;
