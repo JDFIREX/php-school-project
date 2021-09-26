@@ -48,9 +48,9 @@ $db = mysqli_select_db($server, 'jonatanblog');
     <?php include("../components/nav.php") ?>
 
     <section class="Login">
-        <h3>Zaloguj się</h3>
+        <h3>Zarejestruj się</h3>
 
-        <form method="post" action="./zaloguj.php">
+        <form method="post" action="./zarejestruj.php">
             <fieldset>
                 <legend>nickName</legend>
                 <input type="text" name="text" id="text">
@@ -61,46 +61,60 @@ $db = mysqli_select_db($server, 'jonatanblog');
                 <input type="password" name="password" id="password">
             </fieldset>
 
+            <fieldset>
+                <legend>Password</legend>
+                <input type="password" name="password2" id="password2">
+            </fieldset>
+
             <div class="buttons">
-                <button id='login' type="submit" disabled>
-                    Zaloguj się
+                <button id='rejestr' type="submit">
+                    Zarejestruj się
                 </button>
-                <a href="./zarejestruj.php">Załóż konto</a>
+                <a href="">Mam już konto</a>
             </div>
         </form>
     </section>
 
     <?php 
     
-        if(isset($_POST['text']) && isset($_POST['password']) ){
+        if(isset($_POST['text']) && isset($_POST['password']) && isset($_POST['password2'])  ){
 
             $login = $_POST['text'];
 
             $q = "SELECT * from user_login where nickName = '$login' ";
-
             $r = mysqli_query($server,$q);
 
             if(mysqli_num_rows($r) == 0){
-                echo "<div class='popup warning-mess'>";
-                echo "<script> startCount() </script>";
-                echo "<p> Podałeś zły login !!</p>";
-                echo "</div>";
-            }
+                
+                $pass1 = password_hash($_POST['password'], PASSWORD_BCRYPT);
+                $pass2 = password_hash($_POST['password2'], PASSWORD_BCRYPT);
 
-            while($d = mysqli_fetch_array($r)){
+                if(password_verify($_POST['password'],$pass2)){
 
-                if(password_verify($_POST['password'],$d['password'])){
-                    $_SESSION['logged'] = true;
-                    $_SESSION['loggedID'] = $d['user_id'];
-                    $url = $_SESSION['mainLink'];
-                    header( "Location: $url" );
+                    $q2 = "INSERT INTO `user_login`( `nickName`, `password`) VALUES ('$login','$pass1')";
+
+                    if(mysqli_query($server,$q2)){
+                        $url = $_SESSION['actualLink']."konto/zaloguj.php";
+                        header( "Location: $url" );
+                    } else {
+                        echo "<div class='popup warning-mess'>";
+                        echo "<script> startCount() </script>";
+                        echo "<p> Nie udało się stworzyć konta </p>";
+                        echo "</div>";
+                    }
+
                 } else {
-                    echo "<div class='popup warning-mess' >";
-                    echo "<p> Podałeś złe hasło !!</p>";
+                    echo "<div class='popup warning-mess'>";
                     echo "<script> startCount() </script>";
+                    echo "<p> hasłą nie są takie same </p>";
                     echo "</div>";
                 }
 
+            } else {
+                echo "<div class='popup warning-mess'>";
+                echo "<script> startCount() </script>";
+                echo "<p> konto już istnieje </p>";
+                echo "</div>";
             }
 
         }
@@ -109,7 +123,7 @@ $db = mysqli_select_db($server, 'jonatanblog');
     ?>
 
 
-    <script src="zaloguj.js" ></script>
+    <script src="./zarejestruj.js" ></script>
 
 </body>
 </html>

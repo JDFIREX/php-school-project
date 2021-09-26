@@ -13,7 +13,9 @@
 
             if($logged){
                 $url = $_SESSION['actualLink']."moje/moje-artykuły.php";
-                echo "<a href='$url' >Moje artykuły</a>";
+                echo "<a href='$url' >Moje Artykuły</a>";
+                $url = $_SESSION['actualLink']."moje/moje-konto.php";
+                echo "<a href='$url' >Moje Konto</a>";
             }
         
         ?>

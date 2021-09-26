@@ -4,10 +4,13 @@ const loginBtn = document.getElementById("login");
 
 let LoginValid = false;
 let PassValid = false;
+console.log("wer");
 
 LoginInput.addEventListener("input", (e) => {
     const value = e.target.value;
-    if(value.length > 5){
+    console.log("wer");
+
+    if(value.length >= 5){
         LoginValid = true;
 
         if(PassValid && LoginValid){
@@ -24,7 +27,8 @@ LoginInput.addEventListener("input", (e) => {
 
 PassInput.addEventListener("input", (e) => {
     const value = e.target.value;
-    if(value.length > 5){
+    console.log("wer")
+    if(value.length >= 5){
         PassValid = true;
 
         if(PassValid && LoginValid){
