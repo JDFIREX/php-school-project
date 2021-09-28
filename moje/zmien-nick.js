@@ -1,35 +1,35 @@
-const LoginInput = document.getElementById("login");
+const newlogin = document.getElementById("newlogin");
 const PassInput = document.getElementById("passwordLog");
-const loginBtn = document.getElementById("loginBtn");
+const changeLoginBTN = document.getElementById("changeLoginBTN");
 
 const InputError = document.querySelector(".text-login-error");
 const PassError = document.querySelector(".pass-error");
 
-let LoginValid = false;
+let newLoginValid = false;
 let PassValid = false;
 
-LoginInput.addEventListener("input", (e) => {
+newlogin.addEventListener("input", (e) => {
     const value = e.target.value;
 
     if(value.length >= 5){
-        LoginValid = true;
+        newLoginValid = true;
 
-        if(LoginValid){
+        if(newLoginValid){
             InputError.style.visibility = "hidden";
         }
 
-        if(PassValid && LoginValid){
-            loginBtn.disabled = false;
+        if(PassValid && newLoginValid){
+         changeLoginBTN.disabled = false;
         }
     } else {
-        LoginValid = false;
+        newLoginValid = false;
 
-        if(!LoginValid){
+        if(!newLoginValid){
             InputError.style.visibility = "visible";
         }
 
-        if(!PassValid || !LoginValid){
-            loginBtn.disabled = true;
+        if(!PassValid || !newLoginValid){
+         changeLoginBTN.disabled = true;
         }
     }
 });
@@ -44,8 +44,8 @@ PassInput.addEventListener("input", (e) => {
             PassError.style.visibility = "hidden";
         }
 
-        if(PassValid && LoginValid){
-            loginBtn.disabled = false;
+        if(PassValid && newLoginValid){
+         changeLoginBTN.disabled = false;
         }
     } else {
         PassValid = false;
@@ -54,17 +54,16 @@ PassInput.addEventListener("input", (e) => {
             PassError.style.visibility = "visible";
         }
 
-        if(!PassValid || !LoginValid){
-            loginBtn.disabled = true;
+        if(!PassValid || !newLoginValid){
+         changeLoginBTN.disabled = true;
         }
     }
 });
 
+ changeLoginBTN.addEventListener("click", (e) => {
 
-loginBtn.addEventListener("click", (e) => {
-
-    if(!PassValid || !LoginValid){
-        loginBtn.disabled = true;
+    if(!PassValid || !newLoginValid){
+        changeLoginBTN.disabled = true;
         e.preventDefault();
     }
 

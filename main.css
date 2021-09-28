@@ -10,6 +10,14 @@
 a {
   color: black;
   text-decoration: none;
+  padding: 5px 20px;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+a:hover {
+  background-color: lightgray;
+  border-radius: 25px;
 }
 
 body {
@@ -144,9 +152,9 @@ header .nav a, header .logged a {
 
 .Login form fieldset {
   position: relative;
-  width: 300px;
+  width: 350px;
   height: 50px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   border: 1px solid #80803d;
 }
 
@@ -165,6 +173,12 @@ header .nav a, header .logged a {
   -webkit-transform: translateY(-9px);
           transform: translateY(-9px);
   background-color: transparent;
+}
+
+.Login form fieldset p {
+  color: red;
+  white-space: nowrap;
+  visibility: hidden;
 }
 
 .Login form .buttons {
@@ -205,5 +219,77 @@ header .nav a, header .logged a {
 
 .Login form .buttons button:hover, .Login form .buttons a:hover {
   background-color: rgba(126, 252, 0, 0.568);
+}
+
+.user-info {
+  width: 100%;
+  border-bottom: 1px solid lightgray;
+  padding: 30px 0;
+}
+
+.user-info .user-stats {
+  width: 100%;
+  padding: 20px 0 10px 50px;
+}
+
+.user-info .user-stats h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.user-info .user-stats div {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.user-info .user-stats div h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.user-info .user-stats div div, .user-info .user-stats div .zmien-haslo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-bottom: 1rem;
+}
+
+.user-info .user-stats div div h1, .user-info .user-stats div .zmien-haslo h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.user-info .user-stats div div a, .user-info .user-stats div .zmien-haslo a {
+  margin-left: 1rem;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.user-info .user-stats div .zmien-haslo {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 /*# sourceMappingURL=main.css.map */

@@ -54,23 +54,26 @@ $db = mysqli_select_db($server, 'jonatanblog');
             <fieldset>
                 <legend>nickName</legend>
                 <input type="text" name="text" id="text">
+                <p class="text-error">Nick powinien mieć 5 lub więcej znaków !! </p>
             </fieldset>
 
             <fieldset>
                 <legend>Password</legend>
                 <input type="password" name="password" id="password">
+                <p class="pass-error">Hasło powinino mieć 5 lub więcej znaków !! </p>
             </fieldset>
 
             <fieldset>
                 <legend>Password</legend>
-                <input type="password" name="password2" id="password2">
+                <input type="password" name="password2" id="passwordsec">
+                <p class="pass-sec-error">Hasło powinino mieć 5 lub więcej znaków !! </p>
             </fieldset>
 
             <div class="buttons">
-                <button id='rejestr' type="submit">
+                <button id='rejestr' type="submit" disabled>
                     Zarejestruj się
                 </button>
-                <a href="">Mam już konto</a>
+                <a href="./zaloguj">Mam już konto</a>
             </div>
         </form>
     </section>
@@ -123,7 +126,7 @@ $db = mysqli_select_db($server, 'jonatanblog');
     ?>
 
 
-    <script src="./zarejestruj.js" ></script>
+<script src="./zarejestruj.js" ></script>
 
 </body>
 </html>
