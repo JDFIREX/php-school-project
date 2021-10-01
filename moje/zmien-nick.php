@@ -103,7 +103,7 @@ $db = mysqli_select_db($server, 'jonatanblog');
                 if(mysqli_num_rows($rr) != 0){
                     echo "<div class='popup warning-mess'>";
                     echo "<script> startCount() </script>";
-                    echo "<p> Login nie możę być taki sam </p>";
+                    echo "<p> Taki login już istnieje </p>";
                     echo "</div>";
                 } else {
 
@@ -118,8 +118,8 @@ $db = mysqli_select_db($server, 'jonatanblog');
                             $newLoginq = "UPDATE `user_login` SET `nickName` = '$newlogin' WHERE `user_id`= $loggID ";
     
                             if(mysqli_query($server,$newLoginq)){
-                                $url = $_SESSION['actualLink']."moje/moje-konto.php";
-                                header( "Location: $url" );
+                                $url = $_SESSION['actualLink']."konto/wyloguj.php";
+                                    header( "Location: $url" );
                             } else {
                                 echo "<div class='popup warning-mess' >";
                                 echo "<p> Coś poszło nie tak </p>";
