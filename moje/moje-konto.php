@@ -86,5 +86,7 @@ $db = mysqli_select_db($server, 'jonatanblog');
     </div>
 
 
+    <?php include("../components/articles.php") ?>
+
 </body>
 </html>
