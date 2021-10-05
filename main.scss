@@ -226,17 +226,40 @@ header{
     flex-wrap: wrap;
     flex-direction: row;
     margin-top: 2rem;
-    gap : 1rem;
+    gap : 3rem;
 
     .article{
         width: 400px;
         height: 600px;
         box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 0.582);
+        
 
-        img{
+        .image{
             width: 100%;
+            height: 300px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: 2;
         }
 
+        .article_info{
+            padding: 15px;
+
+            h1{
+                font-size: 1.2rem;
+                height: 60px;
+            }
+
+            p{
+                -webkit-box-orient: vertical;
+                display: -webkit-box;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                -webkit-line-clamp: 7;
+            }
+
+        }
 
     }
 }
