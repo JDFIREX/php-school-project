@@ -3,13 +3,18 @@
 
 session_start();
 
-if(!$_SESSION['logged'] || $_SESSION['article_id'] == 0){
+$server = mysqli_connect('localhost','root','');
+$db = mysqli_select_db($server, 'jonatanblog');
+
+$getArticleID = $id = $_GET['id'];
+$myarticleQ = "SELECT * from article where article_id = '$getArticleID' ";
+$r = mysqli_query($server,$myarticleQ);
+
+
+if(!$_SESSION['logged'] || !$getArticleID || mysqli_num_rows($r) == 0 ){
     $url = $_SESSION['mainLink'];
     header( "Location: $url" );
 }
-
-$server = mysqli_connect('localhost','root','');
-$db = mysqli_select_db($server, 'jonatanblog');
 
 ?>
 
@@ -26,12 +31,27 @@ $db = mysqli_select_db($server, 'jonatanblog');
    
    <?php include("../components/nav.php") ?>
 
+    <?php 
+    
+    
+    $myarticleR = mysqli_query($server,$myarticleQ);
+
+    while($d = mysqli_fetch_array($myarticleR)){
+        if($_SESSION['loggedID'] == $d['article_owner_id']){
+            $editURL = $_SESSION['actualLink'].'jonatan-blog/edit/article.php?id='.$getArticleID;
+            echo "<a class='edit-button'  href=''  >Edytuj</a>";
+        }
+    }
+    
+    
+    ?>
+
+
+
    <div class="article_container" >
 
     <?php 
 
-    $articleID = $_SESSION['article_id'];
-    $myarticleQ = "SELECT * from article where article_id = '$articleID' ";
     $myarticleR = mysqli_query($server,$myarticleQ);
 
     while($d = mysqli_fetch_array($myarticleR)){
@@ -43,7 +63,6 @@ $db = mysqli_select_db($server, 'jonatanblog');
         echo "<p>$d[article_text]</p>";
         echo "</div>";
     }
-    
 
     
     ?>

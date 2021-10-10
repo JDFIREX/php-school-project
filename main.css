@@ -391,4 +391,9 @@ header .nav a, header .logged a {
   font-size: 1.15rem;
   font-weight: 600;
 }
+
+.edit-button {
+  margin-left: 30px;
+  margin-top: 10px;
+}
 /*# sourceMappingURL=main.css.map */

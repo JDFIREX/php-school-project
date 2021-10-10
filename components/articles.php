@@ -5,8 +5,7 @@
 if($_SESSION['logged']){
 
     if(isset($_POST['article'])){
-        $_SESSION['article_id'] = $_POST['article'];
-        $url = $_SESSION['actualLink'].'jonatan-blog/article.php';
+        $url = $_SESSION['actualLink'].'jonatan-blog/article.php?id='.$_POST['article'];
         header( "Location: $url" );
     }
 

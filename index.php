@@ -14,7 +14,6 @@
 
     $_SESSION['logged'] = false;
     $_SESSION['loggedID'] = 0;
-    $_SESSION['article_id'] = 0;
 
     echo $url;
 
