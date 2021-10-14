@@ -15,6 +15,13 @@
     $_SESSION['logged'] = false;
     $_SESSION['loggedID'] = 0;
 
+    $_SESSION['header'] = null;
+    $_SESSION['lastheader'] = null;
+    $_SESSION['src'] = null;
+    $_SESSION['text'] = [];
+    $_SESSION['category'] = null;
+    $_SESSION['lastsrc'] = null;
+
     echo $url;
 
     header( "Location: $url" );

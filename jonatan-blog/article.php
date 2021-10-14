@@ -39,7 +39,7 @@ if(!$_SESSION['logged'] || !$getArticleID || mysqli_num_rows($r) == 0 ){
     while($d = mysqli_fetch_array($myarticleR)){
         if($_SESSION['loggedID'] == $d['article_owner_id']){
             $editURL = $_SESSION['actualLink'].'jonatan-blog/edit/article.php?id='.$getArticleID;
-            echo "<a class='edit-button'  href=''  >Edytuj</a>";
+            echo "<a class='edit-button'  href='$editURL'  >Edytuj</a>";
         }
     }
     

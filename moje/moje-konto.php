@@ -63,6 +63,7 @@ $db = mysqli_select_db($server, 'jonatanblog');
                             echo "</div>";
                             echo "<div class='zmien-haslo'>";
                                 echo "<a href='zmien-haslo.php'>zmień hasło</a>";
+                                echo "<a href='stworz-artykol.php'>stwórz artykół</a>";
                             echo "</div>";
                         echo "</div>";
                     }

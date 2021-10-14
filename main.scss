@@ -320,5 +320,50 @@ header{
 
 .edit-button{
     margin-left: 30px;
-    margin-top: 10px;
+    margin-top: 50px;
 }
+
+
+.create-article{
+
+    .article-background{
+        background-color: lightgray;
+        width: 100%;
+        height: 400px;
+        position: relative;
+
+        .article_bacground_src{
+            width: 100%;
+            height: 400px;
+            background-position: 0 0;
+            background-repeat: no-repeat;
+            background-size: 100% auto;
+        }
+
+        .change-src{
+            margin-top: 20px;
+        }
+
+        .select-src{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 25px;
+            background-color: transparent;
+        }
+
+    }
+
+    .article-header{
+        margin-top: 50px;
+    }
+
+}
+
+

@@ -394,6 +394,52 @@ header .nav a, header .logged a {
 
 .edit-button {
   margin-left: 30px;
-  margin-top: 10px;
+  margin-top: 50px;
+}
+
+.create-article .article-background {
+  background-color: lightgray;
+  width: 100%;
+  height: 400px;
+  position: relative;
+}
+
+.create-article .article-background .article_bacground_src {
+  width: 100%;
+  height: 400px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+
+.create-article .article-background .change-src {
+  margin-top: 20px;
+}
+
+.create-article .article-background .select-src {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 400px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 25px;
+  background-color: transparent;
+}
+
+.create-article .article-header {
+  margin-top: 50px;
 }
 /*# sourceMappingURL=main.css.map */
