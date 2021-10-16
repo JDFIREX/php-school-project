@@ -28,9 +28,9 @@ if(!$_SESSION['logged'] ){
    
    <?php include("../components/nav.php") ?>
 
-    <div class='create-article' >
+    <main class='create-article' >
 
-        <div class='article-background' >
+        <section class='article-background' >
             <?php
 
 
@@ -73,10 +73,10 @@ if(!$_SESSION['logged'] ){
             }
             
             ?>
-        </div>
+        </section>
             
 
-        <div class='article-header' >
+        <section class='article-header' >
 
 
         <?php
@@ -129,11 +129,50 @@ if(!$_SESSION['logged'] ){
             ?>
 
 
-        </div>
-
-    </div>
+        </section>
 
 
+        <section>
+            
+            <?php 
+            
+            
+                if(isset($_POST['setText'])){
+                    $s = $_POST;
+                    $t = array_shift($s);
+                    $_SESSION['text'] = $s;
+                    print_r( $_SESSION['text'] );
+                }
+            
+            
+            ?>
+
+            <form method="post" >
+                <input type="hidden" name="setText" value='true' >
+
+                <div class='my-post' >
+                    <div class='my-post-article-1' >
+                        <textarea name="1" id="text1" cols="30" rows="10"></textarea>
+                    </div>
+                </div>
+
+                <p class='add-section' >dodaj nową sekcje</p>
+                <p class='add-img' >dodaj obraz</p>
+            
+                <button type="submit">sub</button>
+
+
+            </form>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <script src="stworz-artykol.js"></script>
     
 
 </body>

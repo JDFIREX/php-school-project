@@ -10,11 +10,34 @@ $getArticleID = $id = $_GET['id'];
 $myarticleQ = "SELECT * from article where article_id = '$getArticleID' ";
 $r = mysqli_query($server,$myarticleQ);
 
+// $t;
 
 if(!$_SESSION['logged'] || !$getArticleID || mysqli_num_rows($r) == 0 ){
     $url = $_SESSION['mainLink'];
     header( "Location: $url" );
+};
+
+
+$rr = "SELECT * from elo ";
+$r2 = mysqli_query($server,$rr);
+
+while($d = mysqli_fetch_array($r2)){
+    $js = json_decode($d['j'],true);
+    print_r($js);
 }
+
+// $myarticleR = mysqli_query($server,$myarticleQ);
+
+// while($d = mysqli_fetch_array($myarticleR)){
+//     $t = $d['article_text'];
+// }
+
+
+// $t = [[$t]];
+
+// print_r($t);
+
+// $r = "UPDATE `article`  SET `article_text`= $t where article_id = '$getArticleID' ";
 
 ?>
 
