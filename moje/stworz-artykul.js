@@ -9,9 +9,10 @@ let currentImgCount = 0;
 addArticle.addEventListener("click", (e) => {
     currentArticleCount++
     const element = document.createElement('div');
-    element.classList.add(`my-post-article-${currentArticleCount}`);
+    element.classList.add(`my-post-article-text_${currentArticleCount}`);
     element.innerHTML = `
-        <textarea name="${currentArticleCount}" id="text${currentArticleCount}" cols="30" rows="10"></textarea>
+        <h5>tekst - ${currentArticleCount}</h5>
+        <textarea name="text_${currentArticleCount}" id="text_${currentArticleCount}" cols="30" rows="10"></textarea>
         <p class='remove-article' data-id="${currentArticleCount}" onClick='removeArticle(this)' >usuń artykół</p>
     `
 
@@ -21,9 +22,10 @@ addArticle.addEventListener("click", (e) => {
 addImg.addEventListener("click", (e) => {
     currentImgCount++
     const element = document.createElement('div');
-    element.classList.add(`my-post-img-${currentImgCount}`);
+    element.classList.add(`my-post-img-src_${currentImgCount}`);
     element.innerHTML = `
-        <input name="${currentImgCount}" id="text${currentImgCount}" placeholder='link do img' />
+        <h5>Obraz - ${currentImgCount}</h5>
+        <input name="src_${currentImgCount}" id="src_${currentImgCount}" placeholder='link do img' />
         <p class='remove-img' data-id="${currentImgCount}" onClick='removeIMG(this)' >usuń zdj</p>
     `
 
@@ -33,14 +35,22 @@ addImg.addEventListener("click", (e) => {
 
 const removeArticle = (e) => {
     const removeID = e.dataset.id;
-    const removeItem = document.querySelector(`.my-post-article-${removeID}`);
+    const removeItem = document.querySelector(`.my-post-article-text_${removeID}`);
     myPost.removeChild(removeItem)
-    currentArticleCount--
 }
 
 const removeIMG = (e) => {
     const removeID = e.dataset.id;
-    const removeItem = document.querySelector(`.my-post-img-${removeID}`);
+    const removeItem = document.querySelector(`.my-post-img-src_${removeID}`);
     myPost.removeChild(removeItem)
-    currentImgCount--
 }
+
+
+let srcValid = false;
+let headerValid = false;
+let textValid = false;
+
+
+
+
+

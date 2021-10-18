@@ -1,6 +1,4 @@
-<?php 
-
-
+<?php
 
 if($_SESSION['logged']){
 
@@ -17,11 +15,14 @@ if($_SESSION['logged']){
     echo "<div class='articles' >";
 
     while($d = mysqli_fetch_array($myarticleR)){
+
+        $text = json_decode($d['article_text'], true);
+
         echo "<form class='article' method='post'>";
         echo "<div style='background-image: url($d[article_src])' class='image' ></div>";
         echo "<div class='article_info' >";
         echo "<h1>$d[article_header]</h1>";
-        echo "<p>$d[article_text]</p>";
+        echo "<p>$text[text_1]</p>";
         echo "</div>";
         echo "<button type='submit' name='article' value='$d[article_id]' >Zobacz artykuł</button>";
         echo "</form>";
