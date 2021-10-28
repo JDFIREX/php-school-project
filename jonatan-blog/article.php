@@ -63,8 +63,15 @@ if(!$_SESSION['logged'] || !$getArticleID || mysqli_num_rows($r) == 0 ){
         echo "</div>";
         echo "<div class='article_text' >";
 
-        foreach($text as $r){
-            echo "<p>$r</p>";
+
+        foreach(array_keys($text) as $r){
+            $x = explode( '_', $r )[0];
+
+            if($x == "text"){
+                echo "<p>$text[$r]</p>";
+            } else {
+                echo "<img src='$text[$r]' alt='obraz' />";
+            }
         }
 
         echo "</div>";

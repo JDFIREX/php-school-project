@@ -255,6 +255,7 @@ header{
                 -webkit-box-orient: vertical;
                 display: -webkit-box;
                 overflow: hidden;
+                word-break: break-all;
                 text-overflow: ellipsis;
                 -webkit-line-clamp: 7;
             }
@@ -312,11 +313,22 @@ header{
         line-height: 30px;
         letter-spacing: 1px;
         font-size: 1.15rem;
+        word-break: break-all;
         font-weight: 600;
         text-align: justify;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
 
         p{
+            width: 100%;
+            text-align: left;
             margin-bottom: 1rem;
+        }
+
+        img{
+            max-height: 350px;
+            margin-bottom: 25px;
         }
     }
 
@@ -441,7 +453,7 @@ header{
                         border: 1px solid lightgrey;
                         outline: none;
                         border-radius: 25px;
-                        padding: 0 25px;
+                        padding: 15px 25px;
                         resize: none;
                     }
 

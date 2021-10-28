@@ -25,6 +25,26 @@ if(!$_SESSION['logged'] ){
    <link rel="stylesheet" href="../main.css">
 </head>
 <body>
+
+    <script>
+
+        function startCount(e) {
+            const popUp = document.querySelector(".popup");
+
+            setTimeout(() => {
+
+                popUp.style.left = "-500px";
+                popUp.style.opacity = "0";
+
+                setTimeout(() => {
+                    popUp.remove()
+                }, 1000);
+
+            }, 5000);
+
+        }
+
+    </script>
    
    <?php include("../components/nav.php") ?>
 
@@ -53,27 +73,27 @@ if(!$_SESSION['logged'] ){
 
                     <label>
                         <p>życiorys</p>
-                        <input type="radio" name=categoria" class="category-radio" value="0" />
+                        <input type="radio" name=categoria class="category-radio" value="0" />
                     </label>
 
                     <label>
                         <p>opinia</p>
-                        <input type="radio" name=categoria" class="category-radio" value="1" />
+                        <input type="radio" name=categoria class="category-radio" value="1" />
                     </label>
 
                     <label>
                         <p>kurs</p>
-                        <input type="radio" name=categoria" class="category-radio" value="2" />
+                        <input type="radio" name=categoria class="category-radio" value="2" />
                     </label>
 
                     <label>
                         <p>polecenia</p>
-                        <input type="radio" name=categoria" class="category-radio" value="3" />
+                        <input type="radio" name=categoria class="category-radio" value="3" />
                     </label>
 
                     <label>
                         <p>o wszystkim i o niczym</p>
-                        <input type="radio" name=categoria" class="category-radio" value="4" checked />
+                        <input type="radio" name=categoria class="category-radio" value="4" checked />
                     </label>
 
                 </label>
@@ -102,8 +122,27 @@ if(!$_SESSION['logged'] ){
             if(isset($_POST['setText'])){
                 $s = $_POST;
                 $t = array_shift($s);
-                $_SESSION['text'] = $s;
-                print_r( $_SESSION['text'] );
+
+                $src = array_shift($s); // article_src
+                $header = array_shift($s); // article_header
+                $category = array_shift($s); // article_category_id
+                $text = json_encode($s);
+                $author = $_SESSION['loggedID'];
+                $date = date("Y-m-d");
+
+                $createArticleQ = "INSERT INTO `article`(`article_header`, `article_src`, `article_text`, `article_category_id`, `article_created`, `article_updated`, `article_owner_id`) VALUES ('$header','$src','$text','$category','$date','$date','$author')";
+
+                if(mysqli_query($server,$createArticleQ)){
+                    $url = $_SESSION['actualLink']."moje/moje-konto.php";
+                    header( "Location: $url" );
+                } else {
+                    echo "<div class='popup warning-mess'>";
+                    echo "<script> startCount() </script>";
+                    echo "<p> coś poszło nie tak </p>";
+                    echo "</div>";
+                }
+
+
             }
 
             ?>

@@ -1,17 +1,20 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   color: black;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 a {
   color: black;
   text-decoration: none;
   padding: 5px 20px;
-  transition: all 0.2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
+
 a:hover {
   background-color: lightgray;
   border-radius: 25px;
@@ -19,6 +22,19 @@ a:hover {
 
 body {
   padding: 1rem 8vw;
+}
+
+@-webkit-keyframes showUp {
+  0% {
+    left: -500px;
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    left: .5rem;
+  }
 }
 
 @keyframes showUp {
@@ -30,64 +46,110 @@ body {
     opacity: 0;
   }
   100% {
-    left: 0.5rem;
+    left: .5rem;
   }
 }
+
 .correct-mess, .warning-mess {
   position: fixed;
-  bottom: 0.5rem;
-  left: 0.5rem;
+  bottom: .5rem;
+  left: .5rem;
   width: 250px;
   height: 75px;
   border-radius: 15px;
   background-color: #3b3636;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  animation: showUp 1s 1;
-  transition: all 0.5s ease-in-out;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-animation: showUp 1s 1;
+          animation: showUp 1s 1;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
 }
+
 .correct-mess p, .warning-mess p {
   color: white;
 }
 
 header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding-bottom: 10px;
   border-bottom: 1px solid lightgray;
 }
+
 header .nav h1 {
   font-size: 20px;
   font-weight: 800;
   margin-right: 1rem;
 }
+
 header .nav, header .logged {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 header .nav a, header .logged a {
   margin: 0 1rem;
 }
 
 .Login {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-top: 100px;
 }
+
 .Login form {
   width: 500px;
   padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
+
 .Login form fieldset {
   position: relative;
   width: 350px;
@@ -95,49 +157,65 @@ header .nav a, header .logged a {
   margin-bottom: 40px;
   border: 1px solid #80803d;
 }
+
 .Login form fieldset legend {
   margin-left: 20px;
   padding: 0 5px;
   z-index: 5;
 }
+
 .Login form fieldset input {
   width: 100%;
   height: 40px;
   border: none;
   outline: none;
   padding: 10px 5px;
-  transform: translateY(-9px);
+  -webkit-transform: translateY(-9px);
+          transform: translateY(-9px);
   background-color: transparent;
 }
+
 .Login form fieldset p {
   color: red;
   white-space: nowrap;
   visibility: hidden;
 }
+
 .Login form .buttons {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 2rem;
 }
+
 .Login form .buttons button:disabled {
   background-color: #b6b6b6;
   cursor: not-allowed;
 }
+
 .Login form .buttons button:disabled:hover {
   background-color: #b6b6b6;
 }
+
 .Login form .buttons button, .Login form .buttons a {
   outline: none;
   background-color: transparent;
   padding: 9px 22px;
   border: 1px solid lightgreen;
   border-radius: 25px;
-  transition: all 0.3s ease-in-out;
-  font-size: 0.9rem;
+  -webkit-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  font-size: .9rem;
   font-weight: 500;
 }
+
 .Login form .buttons button:hover, .Login form .buttons a:hover {
   background-color: rgba(126, 252, 0, 0.568);
 }
@@ -147,58 +225,95 @@ header .nav a, header .logged a {
   border-bottom: 1px solid lightgray;
   padding: 30px 0;
 }
+
 .user-info .user-stats {
   width: 100%;
   padding: 20px 0 10px 50px;
 }
+
 .user-info .user-stats h1 {
   font-size: 1.5rem;
   font-weight: 600;
 }
+
 .user-info .user-stats div {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
+
 .user-info .user-stats div h1 {
   font-size: 1.5rem;
   font-weight: 600;
 }
+
 .user-info .user-stats div div, .user-info .user-stats div .zmien-haslo {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   margin-bottom: 1rem;
 }
+
 .user-info .user-stats div div h1, .user-info .user-stats div .zmien-haslo h1 {
   font-size: 1.5rem;
   font-weight: 600;
 }
+
 .user-info .user-stats div div a, .user-info .user-stats div .zmien-haslo a {
   margin-left: 1rem;
   font-size: 1.5rem;
   font-weight: 300;
 }
+
 .user-info .user-stats div .zmien-haslo {
-  justify-content: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .articles {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   margin-top: 2rem;
   gap: 3rem;
 }
+
 .articles .article {
   width: 400px;
   height: 600px;
   position: relative;
-  box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 0.582);
+  -webkit-box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 0.582);
+          box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 0.582);
 }
+
 .articles .article .image {
   width: 100%;
   height: 300px;
@@ -207,20 +322,25 @@ header .nav a, header .logged a {
   background-size: cover;
   z-index: 2;
 }
+
 .articles .article .article_info {
   padding: 15px;
 }
+
 .articles .article .article_info h1 {
   font-size: 1.2rem;
   height: 60px;
 }
+
 .articles .article .article_info p {
   -webkit-box-orient: vertical;
   display: -webkit-box;
   overflow: hidden;
+  word-break: break-all;
   text-overflow: ellipsis;
   -webkit-line-clamp: 7;
 }
+
 .articles .article button {
   position: absolute;
   bottom: 15px;
@@ -232,11 +352,17 @@ header .nav a, header .logged a {
 
 .article_container {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-bottom: 300px;
   padding: 20px 50px;
 }
+
 .article_container .article_bacground {
   margin-top: 50px;
   width: 100%;
@@ -245,6 +371,7 @@ header .nav a, header .logged a {
   background-repeat: no-repeat;
   background-size: 100% auto;
 }
+
 .article_container .article_header {
   padding: 10px 0;
   width: 100%;
@@ -255,17 +382,37 @@ header .nav a, header .logged a {
   font-size: 1.5rem;
   font-weight: 600;
 }
+
 .article_container .article_text {
   padding: 20px 50px;
   word-spacing: 3px;
   line-height: 30px;
   letter-spacing: 1px;
   font-size: 1.15rem;
+  word-break: break-all;
   font-weight: 600;
   text-align: justify;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
+
 .article_container .article_text p {
+  width: 100%;
+  text-align: left;
   margin-bottom: 1rem;
+}
+
+.article_container .article_text img {
+  max-height: 350px;
+  margin-bottom: 25px;
 }
 
 .edit-button {
@@ -276,22 +423,35 @@ header .nav a, header .logged a {
 .create-article {
   margin-bottom: 20rem;
 }
+
 .create-article section {
   margin-top: 3rem;
 }
+
 .create-article section form label {
   width: 100%;
   height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   margin-bottom: 2rem;
   gap: 10px;
 }
+
 .create-article section form label p {
   font-size: 1rem;
 }
+
 .create-article section form label input {
   width: 90%;
   height: 45px;
@@ -302,40 +462,74 @@ header .nav a, header .logged a {
   border: 1px solid lightgrey;
   padding: 0 25px;
 }
+
 .create-article section form .category-label {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 5px;
-  justify-content: flex-start;
-  align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   padding-left: 5%;
 }
+
 .create-article section form .category-label p {
   margin-bottom: 1rem;
 }
+
 .create-article section form .category-label label {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: flex-end;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-bottom: 0rem;
 }
+
 .create-article section form .category-label label p {
   margin-bottom: 0;
 }
+
 .create-article section form .category-label label input {
   width: 15px;
   height: 15px;
 }
+
 .create-article section form .my-post div {
   width: 100%;
   height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin-bottom: 1.5rem;
 }
+
 .create-article section form .my-post div input {
   width: 90%;
   height: 45px;
@@ -344,12 +538,14 @@ header .nav a, header .logged a {
   border-radius: 25px;
   padding: 0 25px;
 }
+
 .create-article section form .my-post div h5 {
   width: 90%;
   text-align: left;
   font-size: 1.2rem;
   margin-bottom: 10px;
 }
+
 .create-article section form .my-post div p {
   background-color: #217121;
   color: white;
@@ -357,25 +553,37 @@ header .nav a, header .logged a {
   padding: 8px 0;
   width: 90%;
   text-align: center;
-  margin-top: 0.2rem;
+  margin-top: .2rem;
 }
+
 .create-article section form .my-post div textarea {
   width: 90%;
   border: 1px solid lightgrey;
   outline: none;
   border-radius: 25px;
-  padding: 0 25px;
+  padding: 15px 25px;
   resize: none;
 }
+
 .create-article section form .article-buttons {
   width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-left: 5%;
-  justify-content: space-between;
-  flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   gap: 15px;
 }
+
 .create-article section form .article-buttons p {
   width: 100%;
   text-align: center;
@@ -383,8 +591,9 @@ header .nav a, header .logged a {
   color: white;
   border-radius: 25px;
   padding: 8px 0;
-  margin-top: 0.2rem;
+  margin-top: .2rem;
 }
+
 .create-article section form .article-add {
   width: 90%;
   outline: none;
@@ -397,5 +606,4 @@ header .nav a, header .logged a {
   padding: 10px 0;
   border-radius: 25px;
 }
-
 /*# sourceMappingURL=main.css.map */

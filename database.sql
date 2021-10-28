@@ -23,7 +23,7 @@ create table article (
         article_id int auto_increment not null,
         article_header varchar(255) not null,
         article_src varchar(1000),
-        article_text JSON,
+        article_text LONGTEXT,
         article_category_id int,
         article_created DATE not null,
         article_updated DATE not null,
