@@ -59,12 +59,12 @@ if(!$_SESSION['logged'] ){
 
                 <label class="src-label" >
                     <p>Link do głównego zjęcia artykułu</p>
-                    <input type="text" name="src"  />
+                    <input type="text" name="src"  id="src" />
                 </label>
 
                 <label class="header-label" >
                     <p>Tytuł Artykułu</p>
-                    <input type='text' name='header' placeholder='Podaj tytuł'  />
+                    <input type='text' name='header' id="header" placeholder='Podaj tytuł'  />
                 </label>
 
                 <label class="category-label" >
@@ -101,7 +101,7 @@ if(!$_SESSION['logged'] ){
                 <div class='my-post' >
                     <div class='my-post-article-text_1' >
                         <h5>tekst - 1</h5>
-                        <textarea name="text_1" id="text_1" cols="30" rows="10"></textarea>
+                        <textarea name="text_1" id="text_1" cols="30" rows="10" class='text' onInput="textAreaValidation()" onChange='textAreaValidation()' onKeyDown='textAreaValidation()' ></textarea>
                     </div>
                 </div>
 
@@ -112,7 +112,7 @@ if(!$_SESSION['logged'] ){
                 </div>
 
 
-                <button class="article-add"  type="submit" >Zapisz artykuł</button>
+                <button class="article-add"  type="submit" disabled >Zapisz artykuł</button>
 
 
             </form>
@@ -141,7 +141,6 @@ if(!$_SESSION['logged'] ){
                     echo "<p> coś poszło nie tak </p>";
                     echo "</div>";
                 }
-
 
             }
 

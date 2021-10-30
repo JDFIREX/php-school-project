@@ -469,6 +469,7 @@ header{
                 margin-left: 5%;
                 justify-content: space-between;
                 flex-direction: row;
+                cursor: pointer;
                 gap: 15px;
 
                 p{
@@ -479,6 +480,7 @@ header{
                     border-radius: 25px;
                     padding: 8px 0;
                     margin-top: .2rem;
+                    cursor: pointer;
                 }
             }
 
@@ -493,6 +495,12 @@ header{
                 margin-top: 2rem;
                 padding: 10px 0;
                 border-radius: 25px;
+                cursor: pointer;
+
+                &:disabled{
+                    background-color: lightgray;
+                    cursor: not-allowed;
+                }
             }
 
         }

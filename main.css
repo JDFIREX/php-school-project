@@ -581,6 +581,7 @@ header .nav a, header .logged a {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  cursor: pointer;
   gap: 15px;
 }
 
@@ -592,6 +593,7 @@ header .nav a, header .logged a {
   border-radius: 25px;
   padding: 8px 0;
   margin-top: .2rem;
+  cursor: pointer;
 }
 
 .create-article section form .article-add {
@@ -605,5 +607,11 @@ header .nav a, header .logged a {
   margin-top: 2rem;
   padding: 10px 0;
   border-radius: 25px;
+  cursor: pointer;
+}
+
+.create-article section form .article-add:disabled {
+  background-color: lightgray;
+  cursor: not-allowed;
 }
 /*# sourceMappingURL=main.css.map */
