@@ -73,7 +73,7 @@ $db = mysqli_select_db($server, 'jonatanblog');
                 <button id='rejestr' type="submit" disabled>
                     Zarejestruj się
                 </button>
-                <a href="./zaloguj">Mam już konto</a>
+                <a href="./zaloguj.php">Mam już konto</a>
             </div>
         </form>
     </section>

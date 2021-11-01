@@ -111,6 +111,13 @@ if(!$_SESSION['logged'] ){
                     <p class='add-img' >dodaj obraz</p>
                 </div>
 
+                <div class="article-errors">
+                    <p class='error src_error' >Tło do artykułu nie może być puste</p>
+                    <p class='error header_error' >Header nie może być pusty</p>
+                    <p class='error texts_error' >Teksty nie mogą być puste</p>
+                    <p class='error imgs_error' >Obrazy nie mogą być puste</p>
+                </div>
+
 
                 <button class="article-add"  type="submit" disabled >Zapisz artykuł</button>
 

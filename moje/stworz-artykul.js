@@ -114,6 +114,8 @@ let headerValid = false;
 let textValid = false;
 let srcArticleValid = true;
 
+let firstLoad = true;
+
 const headerInput = document.getElementById("header");
 const srcInput = document.getElementById("src");
 
@@ -122,7 +124,6 @@ headerInput.addEventListener("input", (e) => {
     const value = e.target.value;
 
     if(value.length == 0){
-        // show error
         headerValid = false;
 
         if(headerValid && srcValid && textValid && srcArticleValid){
@@ -149,7 +150,6 @@ srcInput.addEventListener("input", (e) => {
 
 
     if(value.length == 0){
-        // show error
         srcValid = false;
 
         if(headerValid && srcValid && textValid && srcArticleValid){
@@ -203,7 +203,6 @@ function srcArticleValidation(){
     const valid = count == srcArticleInputs.length;
 
     if(!valid){
-        // show error
         srcArticleValid = false;
 
         if(headerValid && srcValid && textValid && srcArticleValid){
@@ -244,7 +243,6 @@ function textAreaValidation(){
     const valid = count == textareaInputs.length;
 
     if(!valid){
-        // show error
         textValid = false;
 
         if(headerValid && srcValid && textValid && srcArticleValid){
@@ -273,10 +271,26 @@ function textAreaValidation(){
 const buttonSubmitNewArticle = document.querySelector(".article-add");
 
 function setDisabledButton(){
-    console.log(srcValid,headerValid,textValid,srcArticleValid)
     buttonSubmitNewArticle.disabled = true;
+    showErrors()
 }
 
 function setEnabledButton(){
     buttonSubmitNewArticle.disabled = false;
+    showErrors()
+}
+showErrors()
+
+function showErrors(){
+
+    const srcError = document.querySelector(".src_error");
+    const headerError = document.querySelector(".header_error");
+    const textsError = document.querySelector(".texts_error");
+    const imgsError = document.querySelector(".imgs_error");
+
+    srcValid ? srcError.style.display = "none" : srcError.style.display = "block"
+    headerValid ? headerError.style.display = "none" : headerError.style.display = "block"
+    textValid ? textsError.style.display = "none" : textsError.style.display = "block"
+    srcArticleValid ? imgsError.style.display = "none" : imgsError.style.display = "block"
+
 }
