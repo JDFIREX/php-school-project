@@ -116,6 +116,11 @@ const srcInput = document.getElementById("src");
 headerInput.addEventListener("input", (e) => {
     const value = e.target.value;
 
+    headerValidation(value);
+
+});
+
+function headerValidation(value){
     if(value.length == 0){
         headerValid = false;
 
@@ -135,13 +140,16 @@ headerInput.addEventListener("input", (e) => {
     } else {
         setDisabledButton()
     }
+}
 
-});
 
 srcInput.addEventListener("input", (e) => {
     const value = e.target.value;
+    srcValidation(value);
+});
 
 
+function srcValidation(value){
     if(value.length == 0){
         srcValid = false;
 
@@ -162,8 +170,8 @@ srcInput.addEventListener("input", (e) => {
     } else {
         setDisabledButton()
     }
+}
 
-});
 
 function srcArticleValidation(){
 
