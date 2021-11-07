@@ -3,11 +3,9 @@ const addImg = document.querySelector(".add-img");
 const myPost = document.querySelector(".my-post");
 
 
-let currentArticleCount = 1;
-let currentImgCount = 0;
 
 addArticle.addEventListener("click", (e) => {
-    currentArticleCount++
+    const currentArticleCount = document.querySelectorAll(".my-post-article").length + 2;
     const element = document.createElement('div');
     element.classList.add(`my-post-article-text_${currentArticleCount}`);
     element.classList.add(`my-post-article`);
@@ -23,7 +21,7 @@ addArticle.addEventListener("click", (e) => {
 
 addImg.addEventListener("click", (e) => {
     srcArticleValid = false;
-    currentImgCount++
+    const currentImgCount = document.querySelectorAll(".my-post-img").length + 1;
     const element = document.createElement('div');
     element.classList.add(`my-post-img-src_${currentImgCount}`);
     element.classList.add(`my-post-img`);
@@ -39,7 +37,6 @@ addImg.addEventListener("click", (e) => {
 
 
 const removeArticle = (e) => {
-    currentArticleCount--
     const removeID = e.dataset.id;
     const removeItem = document.querySelector(`.my-post-article-text_${removeID}`);
     myPost.removeChild(removeItem);
@@ -47,7 +44,6 @@ const removeArticle = (e) => {
 }
 
 const removeIMG = (e) => {
-    currentImgCount--
     const removeID = e.dataset.id;
     const removeItem = document.querySelector(`.my-post-img-src_${removeID}`);
     myPost.removeChild(removeItem);

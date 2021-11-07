@@ -14,7 +14,6 @@ if(!$_SESSION['logged'] || !$getArticleID || mysqli_num_rows($r) == 0 ){
     $url = $_SESSION['mainLink'];
     header( "Location: $url" );
 };
-
 ?>
 
 <!DOCTYPE html>
@@ -28,11 +27,29 @@ if(!$_SESSION['logged'] || !$getArticleID || mysqli_num_rows($r) == 0 ){
 </head>
 <body>
 
-<?php 
+<script>
 
+        function startCount(e) {
+            const popUp = document.querySelector(".popup");
+
+            setTimeout(() => {
+
+                popUp.style.left = "-500px";
+                popUp.style.opacity = "0";
+
+                setTimeout(() => {
+                    popUp.remove()
+                }, 1000);
+
+            }, 5000);
+
+        }
+
+    </script>
+
+<?php 
 $Gheader;
 $Gsrc;
-
 ?>
    
    <?php include("../../components/nav.php") ?>
@@ -43,19 +60,15 @@ $Gsrc;
             <form method="post">
 
                 <?php
-
                     $myarticleR = mysqli_query($server,$myarticleQ);
 
                     while($d = mysqli_fetch_array($myarticleR)){
-
-                
                 ?>
 
                 <input type="hidden" name="setText" value='true' >
 
 
-                <?php  // article background
-
+                <?php
                         $src = $d["article_src"];
                         $Gsrc = $src;
                 
@@ -65,12 +78,10 @@ $Gsrc;
                             <input type='text' name='src'  id='src' value='$src' />
                         </label>
                         ";
-
                 ?>
 
 
-                <?php  // article header
-
+                <?php
                         $header = $d["article_header"];
                         $Gheader = $header;
                 
@@ -80,52 +91,61 @@ $Gsrc;
                             <input type='text' name='header' id='header' placeholder='Podaj tytuł' value='$header'  />
                         </label>
                         ";
-
                 ?>
 
-                <?php // article category 
-                
+                <?php
                     $category = $d["article_category_id"];
-                    $c0 = $category == 0;
-                    $c1 = $category == 1;
-                    $c2 = $category == 2;
-                    $c3 = $category == 3;
-                    $c4 = $category == 4;
+                    $category = intval($category);
+
+                    $c0 = $category == 1 ? 'checked' : "";
+                    $c1 = $category == 2 ? 'checked' : "";
+                    $c2 = $category == 3 ? 'checked' : "";
+                    $c3 = $category == 4 ? 'checked' : "";
+                    $c4 = $category == 5 ? 'checked' : "";
 
                     echo "
                     <label class='category-label' >
 
                         <p>Wybierz Kategorie</p>
 
+
+                        <script>
+                            function checkIfChecked(v){
+                                let i = '$category';
+                                i = Number(i);
+                                v = Number(v);
+                                return i == v;
+                            }
+                        </script>
+
                         <label>
                             <p>życiorys</p>
-                            <input type='radio' name=categoria class='category-radio' value='0' checked='$c0'  />
+                            <input type='radio' name=categoria class='category-radio' value='1' $c0  />
                         </label>
 
                         <label>
                             <p>opinia</p>
-                            <input type='radio' name=categoria class='category-radio' value='1' checked='$c1' />
+                            <input type='radio' name=categoria class='category-radio' value='2' $c1 />
                         </label>
 
                         <label>
                             <p>kurs</p>
-                            <input type='radio' name=categoria class='category-radio' value='2' checked='$c2' />
+                            <input type='radio' name=categoria class='category-radio' value='3' $c2 />
                         </label>
 
                         <label>
                             <p>polecenia</p>
-                            <input type='radio' name=categoria class='category-radio' value='3' checked='$c3' />
+                            <input type='radio' name=categoria class='category-radio' value='4' $c3 />
                         </label>
 
                         <label>
                             <p>o wszystkim i o niczym</p>
-                            <input type='radio' name=categoria class='category-radio' value='4' checked='$c4' />
+                            <input type='radio' name=categoria class='category-radio' value='5' $c4 />
                         </label>
 
                     </label>
                     
-                    "
-                
+                    ";
                 ?>
 
 
@@ -176,14 +196,11 @@ $Gsrc;
                     }
 
                     echo "</div>";
-                
                 ?>
 
 
                 <?php 
-                
-                    }; // while close
-                
+                    };
                 ?>
 
                 
@@ -211,8 +228,7 @@ $Gsrc;
 
 <script src="./article-edit.js"></script>
 
-<?php 
-                
+<?php            
 echo "
     <script>
         updateTextAreaDOM();
@@ -227,38 +243,38 @@ echo "<script>
     srcValidation(a);
     headerValidation(b)
 </script>";
-
 ?>
 
 </body>
 </html>
 
-
 <?php
+if(isset($_POST['setText'])){
 
-            if(isset($_POST['setText'])){
-                $s = $_POST;
-                $t = array_shift($s);
+    header_remove(); 
+    $s = $_POST;
+    $t = array_shift($s);
 
-                $src = array_shift($s); // article_src
-                $header = array_shift($s); // article_header
-                $category = array_shift($s); // article_category_id
-                $text = json_encode($s);
-                $author = $_SESSION['loggedID'];
-                $date = date("Y-m-d");
+    $src = array_shift($s);
+    $header = array_shift($s);
+    $category = array_shift($s);
+    $category = intval($category);
+    $text = json_encode($s);
+    $author = $_SESSION['loggedID'];
+    $date = date("Y-m-d");
+    $id = 
 
-                $createArticleQ = "INSERT INTO `article`(`article_header`, `article_src`, `article_text`, `article_category_id`, `article_created`, `article_updated`, `article_owner_id`) VALUES ('$header','$src','$text','$category','$date','$date','$author')";
+    $q = "UPDATE `article` SET `article_header`='$header',`article_src`='$src',`article_text`='$text', `article_category_id`=  $category , `article_updated`='$date' WHERE `article_id`='$getArticleID'";
 
-                if(mysqli_query($server,$createArticleQ)){
-                    $url = $_SESSION['actualLink']."moje/moje-konto.php";
-                    header( "Location: $url" );
-                } else {
-                    echo "<div class='popup warning-mess'>";
-                    echo "<script> startCount() </script>";
-                    echo "<p> coś poszło nie tak </p>";
-                    echo "</div>";
-                }
-
-            }
-
-            ?>
+    if(mysqli_query($server,$q)){
+        echo $category;
+        $url = $_SESSION['actualLink'];
+        header( "Location: $url" );
+    } else {
+        echo "<div class='popup warning-mess'>";
+        echo "<script> startCount() </script>";
+        echo "<p> coś poszło nie tak </p>";
+        echo "</div>";
+    }
+}
+?>

@@ -73,27 +73,27 @@ if(!$_SESSION['logged'] ){
 
                     <label>
                         <p>życiorys</p>
-                        <input type="radio" name=categoria class="category-radio" value="0" />
-                    </label>
-
-                    <label>
-                        <p>opinia</p>
                         <input type="radio" name=categoria class="category-radio" value="1" />
                     </label>
 
                     <label>
-                        <p>kurs</p>
+                        <p>opinia</p>
                         <input type="radio" name=categoria class="category-radio" value="2" />
                     </label>
 
                     <label>
-                        <p>polecenia</p>
+                        <p>kurs</p>
                         <input type="radio" name=categoria class="category-radio" value="3" />
                     </label>
 
                     <label>
+                        <p>polecenia</p>
+                        <input type="radio" name=categoria class="category-radio" value="4" />
+                    </label>
+
+                    <label>
                         <p>o wszystkim i o niczym</p>
-                        <input type="radio" name=categoria class="category-radio" value="4" checked />
+                        <input type="radio" name=categoria class="category-radio" value="5" checked />
                     </label>
 
                 </label>
