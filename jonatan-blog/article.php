@@ -10,8 +10,9 @@ $getArticleID = $id = $_GET['id'];
 $myarticleQ = "SELECT * from article where article_id = '$getArticleID' ";
 $r = mysqli_query($server,$myarticleQ);
 
-if(!$_SESSION['logged'] || !$getArticleID || mysqli_num_rows($r) == 0 ){
-    $url = $_SESSION['mainLink'];
+if(mysqli_num_rows($r) == 0 ){
+    $actual_link = "http://$_SERVER[HTTP_HOST]";
+    $url = $actual_link."/j";
     header( "Location: $url" );
 };
 
@@ -38,7 +39,9 @@ if(!$_SESSION['logged'] || !$getArticleID || mysqli_num_rows($r) == 0 ){
     while($d = mysqli_fetch_array($myarticleR)){
         if($_SESSION['loggedID'] == $d['article_owner_id']){
             $editURL = $_SESSION['actualLink'].'jonatan-blog/edit/article.php?id='.$getArticleID;
+            $DeleteURL = $_SESSION['actualLink'].'jonatan-blog/delete/article.php?id='.$getArticleID;
             echo "<a class='edit-button'  href='$editURL'  >Edytuj</a>";
+            echo "<a class='edit-button'  href='$DeleteURL'  >Usuń</a>";
         }
     }
     

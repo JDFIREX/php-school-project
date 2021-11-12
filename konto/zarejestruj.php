@@ -3,9 +3,10 @@
 
 session_start();
 
-if($_SESSION['logged']){
-    $url = $_SESSION['mainLink'];
-    header( "Location: $url" ); // moje konto
+if(($_SESSION['logged'])){
+    $actual_link = "http://$_SERVER[HTTP_HOST]";
+    $url = $actual_link."/j";
+    header( "Location: $url" );
 }
 
 

@@ -338,7 +338,8 @@ header .nav a, header .logged a {
   overflow: hidden;
   word-break: break-all;
   text-overflow: ellipsis;
-  -webkit-line-clamp: 7;
+  -webkit-line-clamp: 1;
+  margin-bottom: .2rem;
 }
 
 .articles .article button {

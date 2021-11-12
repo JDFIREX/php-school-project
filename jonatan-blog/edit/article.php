@@ -3,6 +3,12 @@
 
 session_start();
 
+if(!($_SESSION['logged'])){
+    $actual_link = "http://$_SERVER[HTTP_HOST]";
+    $url = $actual_link."/j";
+    header( "Location: $url" );
+}
+
 $server = mysqli_connect('localhost','root','');
 $db = mysqli_select_db($server, 'jonatanblog');
 
@@ -10,8 +16,17 @@ $getArticleID = $id = $_GET['id'];
 $myarticleQ = "SELECT * from article where article_id = '$getArticleID' ";
 $r = mysqli_query($server,$myarticleQ);
 
-if(!$_SESSION['logged'] || !$getArticleID || mysqli_num_rows($r) == 0 ){
-    $url = $_SESSION['mainLink'];
+while($d = mysqli_fetch_array($r)){
+    if($d['article_owner_id'] != $_SESSION['loggedID'] ){
+        $actual_link = "http://$_SERVER[HTTP_HOST]";
+        $url = $actual_link."/j";
+        header( "Location: $url" );
+    }
+}
+
+if(mysqli_num_rows($r) == 0 ){
+    $actual_link = "http://$_SERVER[HTTP_HOST]";
+    $url = $actual_link."/j";
     header( "Location: $url" );
 };
 ?>
@@ -168,8 +183,8 @@ $Gsrc;
                                 onChange='textAreaValidation()' 
                                 onKeyDown='textAreaValidation()' 
                                 >$f</textarea>
-                        </div>";
-                    
+                        </div>
+                    ";
 
                     foreach(array_keys($text) as $r){
                         $x = explode( '_', $r )[0];
@@ -196,14 +211,8 @@ $Gsrc;
                     }
 
                     echo "</div>";
+                }
                 ?>
-
-
-                <?php 
-                    };
-                ?>
-
-                
 
                 <div class="article-buttons" >
                     <p class='add-section' >dodaj nową sekcje</p>
@@ -229,20 +238,20 @@ $Gsrc;
 <script src="./article-edit.js"></script>
 
 <?php            
-echo "
-    <script>
-        updateTextAreaDOM();
-        updateSrcDOM();
-    </script>
-";
+    echo "
+        <script>
+            updateTextAreaDOM();
+            updateSrcDOM();
+        </script>
+    ";
 
-echo "<script>
-    const a = '$Gsrc'
-    const b = '$Gheader'
+    echo "<script>
+        const a = '$Gsrc'
+        const b = '$Gheader'
 
-    srcValidation(a);
-    headerValidation(b)
-</script>";
+        srcValidation(a);
+        headerValidation(b)
+    </script>";
 ?>
 
 </body>
@@ -250,8 +259,6 @@ echo "<script>
 
 <?php
 if(isset($_POST['setText'])){
-
-    header_remove(); 
     $s = $_POST;
     $t = array_shift($s);
 
@@ -262,14 +269,16 @@ if(isset($_POST['setText'])){
     $text = json_encode($s);
     $author = $_SESSION['loggedID'];
     $date = date("Y-m-d");
-    $id = 
-
     $q = "UPDATE `article` SET `article_header`='$header',`article_src`='$src',`article_text`='$text', `article_category_id`=  $category , `article_updated`='$date' WHERE `article_id`='$getArticleID'";
 
     if(mysqli_query($server,$q)){
-        echo $category;
-        $url = $_SESSION['actualLink'];
-        header( "Location: $url" );
+        $url2 = $_SESSION['actualLink']."moje/moje-konto.php";
+        echo "
+        <script>
+            let url = '$url2';
+            window.location = url;
+        </script>
+        ";
     } else {
         echo "<div class='popup warning-mess'>";
         echo "<script> startCount() </script>";
