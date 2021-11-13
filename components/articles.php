@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
 <?php
 
 if($_SESSION['logged']){
@@ -16,7 +22,7 @@ if($_SESSION['logged']){
 
     while($d = mysqli_fetch_array($myarticleR)){
 
-        $text = json_decode($d['article_text'], true);
+        $text = json_decode($d['article_text'], true, 512, JSON_UNESCAPED_UNICODE);
 
         $category = $d['article_category_id'];
         $textCategory;
@@ -46,3 +52,6 @@ if($_SESSION['logged']){
 
 
 ?>
+</body>
+</html>
+

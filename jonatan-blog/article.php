@@ -58,7 +58,7 @@ if(mysqli_num_rows($r) == 0 ){
 
     while($d = mysqli_fetch_array($myarticleR)){
 
-        $text = json_decode($d['article_text'], true);
+        $text = json_decode($d['article_text'], true, 512, JSON_UNESCAPED_UNICODE);
 
         echo "<div style='background-image: url($d[article_src])' class='article_bacground' ></div>";
         echo "<div class='article_header' >";

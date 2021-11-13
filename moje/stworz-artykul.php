@@ -134,7 +134,7 @@ $db = mysqli_select_db($server, 'jonatanblog');
                 $src = array_shift($s); // article_src
                 $header = array_shift($s); // article_header
                 $category = array_shift($s); // article_category_id
-                $text = json_encode($s);
+                $text = json_encode($s, JSON_UNESCAPED_UNICODE);
                 $author = $_SESSION['loggedID'];
                 $date = date("Y-m-d");
 

@@ -166,7 +166,7 @@ $Gsrc;
 
                 <?php // article text 
                 
-                    $text = json_decode($d['article_text'], true);
+                    $text = json_decode($d['article_text'], true, 512, JSON_UNESCAPED_UNICODE);
                     $f = array_shift($text);
 
                     echo "
@@ -266,7 +266,7 @@ if(isset($_POST['setText'])){
     $header = array_shift($s);
     $category = array_shift($s);
     $category = intval($category);
-    $text = json_encode($s);
+    $text = json_encode($s, JSON_UNESCAPED_UNICODE);
     $author = $_SESSION['loggedID'];
     $date = date("Y-m-d");
     $q = "UPDATE `article` SET `article_header`='$header',`article_src`='$src',`article_text`='$text', `article_category_id`=  $category , `article_updated`='$date' WHERE `article_id`='$getArticleID'";

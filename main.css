@@ -278,6 +278,7 @@ header .nav a, header .logged a {
 .user-info .user-stats div div h1, .user-info .user-stats div .zmien-haslo h1 {
   font-size: 1.5rem;
   font-weight: 600;
+  word-break: break-all;
 }
 
 .user-info .user-stats div div a, .user-info .user-stats div .zmien-haslo a {
@@ -329,7 +330,13 @@ header .nav a, header .logged a {
 
 .articles .article .article_info h1 {
   font-size: 1.2rem;
-  height: 60px;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  overflow: hidden;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  margin-bottom: .5rem;
 }
 
 .articles .article .article_info p {
@@ -338,7 +345,7 @@ header .nav a, header .logged a {
   overflow: hidden;
   word-break: break-all;
   text-overflow: ellipsis;
-  -webkit-line-clamp: 1;
+  -webkit-line-clamp: 3;
   margin-bottom: .2rem;
 }
 
@@ -382,6 +389,7 @@ header .nav a, header .logged a {
   letter-spacing: 1px;
   font-size: 1.5rem;
   font-weight: 600;
+  word-break: break-all;
 }
 
 .article_container .article_text {
@@ -409,6 +417,7 @@ header .nav a, header .logged a {
   width: 100%;
   text-align: left;
   margin-bottom: 1rem;
+  word-break: break-all;
 }
 
 .article_container .article_text img {
