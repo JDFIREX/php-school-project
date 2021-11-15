@@ -29,6 +29,7 @@ if(mysqli_num_rows($r) == 0 ){
     $url = $actual_link."/j";
     header( "Location: $url" );
 };
+
 ?>
 
 <!DOCTYPE html>

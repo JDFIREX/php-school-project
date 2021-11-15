@@ -58,14 +58,13 @@ if(mysqli_num_rows($r) == 0 ){
 
     while($d = mysqli_fetch_array($myarticleR)){
 
-        $text = json_decode($d['article_text'], true, 512, JSON_UNESCAPED_UNICODE);
+        $text = json_decode($d['article_text'], true, 512, JSON_UNESCAPED_UNICODE); // sprawdzić czy exportownaie pomoże
 
         echo "<div style='background-image: url($d[article_src])' class='article_bacground' ></div>";
         echo "<div class='article_header' >";
         echo "<h1>$d[article_header]</h1>";
         echo "</div>";
         echo "<div class='article_text' >";
-
 
         foreach(array_keys($text) as $r){
             $x = explode( '_', $r )[0];
@@ -85,6 +84,15 @@ if(mysqli_num_rows($r) == 0 ){
 
 
    </div>
+
+
+    <div class="article_comments">
+        <?php 
+        
+        // article comments
+        
+        ?>
+    </div>
 
 
 </body>

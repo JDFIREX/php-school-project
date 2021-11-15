@@ -15,6 +15,7 @@ if($_SESSION['logged']){
 
     $loggedID = $_SESSION['loggedID'];
     $myarticleQ = "SELECT * from article inner join user_login on article_owner_id = user_login.user_id where article_owner_id = '$loggedID'";
+
     $myarticleR = mysqli_query($server,$myarticleQ);
 
 
@@ -23,6 +24,14 @@ if($_SESSION['logged']){
     while($d = mysqli_fetch_array($myarticleR)){
 
         $text = json_decode($d['article_text'], true, 512, JSON_UNESCAPED_UNICODE);
+        $idD = $d['article_id'];
+        $commentsCount = "SELECT count(comment_id) as cc from article_comment where comment_for_article_id = $idD";
+        $commentR = mysqli_query($server,$commentsCount);
+        $count;
+
+        while($x = mysqli_fetch_array($commentR)){
+            $count = $x['cc'];
+        }
 
         $category = $d['article_category_id'];
         $textCategory;
@@ -40,6 +49,7 @@ if($_SESSION['logged']){
         echo "<p>Ostatnia aktulizacja : $d[article_updated]</p>";
         echo "<p>Kategoria : $textCategory</p>";
         echo "<p>Autor : $d[nickName]</p>";
+        echo "<p>Liczba komentarzy : $count</p>";
         echo "<p>$text[text_1]</p>";
         echo "</div>";
         echo "<button type='submit' name='article' value='$d[article_id]' >Zobacz artykuł</button>";

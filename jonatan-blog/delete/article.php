@@ -59,7 +59,9 @@ if(mysqli_num_rows($r) == 0 ){
     <?php 
     
     if(isset($_POST['tak'])){
-        $q = "DELETE FROM `article` WHERE `article_id` = $getArticleID";
+        $c = "DELETE FROM `article_comment` where `comment_for_article_id` = '$getArticleID'";
+        $q = "DELETE FROM `article` WHERE `article_id` = '$getArticleID'";
+        mysqli_query($server,$c);
         mysqli_query($server,$q);
         $url2 = $_SESSION['actualLink']."moje/moje-konto.php";
         header( "Location: $url2" );
