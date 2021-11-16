@@ -247,8 +247,8 @@ $Gsrc;
     ";
 
     echo "<script>
-        const a = '$Gsrc'
-        const b = '$Gheader'
+        const a = `$Gsrc`
+        const b = `$Gheader`
 
         srcValidation(a);
         headerValidation(b)

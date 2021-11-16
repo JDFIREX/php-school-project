@@ -303,6 +303,8 @@ header .nav a, header .logged a {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   margin-top: 2rem;
   gap: 3rem;
 }
