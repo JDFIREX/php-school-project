@@ -715,4 +715,71 @@ header .nav a, header .logged a {
   background-color: green;
   text-align: center;
 }
+
+.article_comments {
+  padding: 0 100px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+  position: relative;
+}
+
+.article_comments .comment {
+  width: 100%;
+  white-space: wrap;
+  word-break: break-all;
+  padding: 10px 0 10px 0;
+  position: relative;
+}
+
+.article_comments .comment .comment-function-buttons {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 15px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.article_comments .comment .comment-function-buttons .function-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.article_comments .comment .comment-data .comment-user {
+  padding-left: 5px;
+}
+
+.article_comments .comment .comment-data .comment-text {
+  padding-left: 20px;
+  padding-top: 10px;
+}
+
+.article_comments .comment:nth-child(odd) {
+  background-color: lightgray;
+}
 /*# sourceMappingURL=main.css.map */
