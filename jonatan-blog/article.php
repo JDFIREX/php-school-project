@@ -6,9 +6,21 @@ session_start();
 $server = mysqli_connect('localhost','root','');
 $db = mysqli_select_db($server, 'jonatanblog');
 
+
+if(isset($_POST['edit'])){
+    $editID = $_POST['edit-id'];
+    $editValue = $_POST['edit-value'];
+    $qEdit = "UPDATE `article_comment` SET `comment` = '$editValue' where `comment_id` = '$editID' ";
+    mysqli_query($server,$qEdit);
+};
+
+
 $getArticleID = $id = $_GET['id'];
 $myarticleQ = "SELECT * from article where article_id = '$getArticleID' ";
 $r = mysqli_query($server,$myarticleQ);
+
+$getAllArticleComments = "SELECT * from article_comment INNER JOIN user_login on user_login.user_id = article_comment.comment_owner_id where comment_for_article_id = $getArticleID";
+$commentsR = mysqli_query($server, $getAllArticleComments);
 
 if(mysqli_num_rows($r) == 0 ){
     $actual_link = "http://$_SERVER[HTTP_HOST]";
@@ -90,9 +102,6 @@ if(mysqli_num_rows($r) == 0 ){
     <div class="article_comments">
         <h1>Komentarze</h1>
         <?php 
-        
-            $getAllArticleComments = "SELECT * from article_comment INNER JOIN user_login on user_login.user_id = article_comment.comment_owner_id where comment_for_article_id = $getArticleID";
-            $commentsR = mysqli_query($server, $getAllArticleComments);
 
             while($d = mysqli_fetch_array($commentsR)){
                 echo '
@@ -101,16 +110,18 @@ if(mysqli_num_rows($r) == 0 ){
 
                 ';
 
+                $comment = "".$d['comment'];
+
                 if(isset($_SESSION['loggedID']) && $_SESSION['loggedID'] == $d['comment_owner_id']){
                     echo "
                     <div class='comment-function-buttons'>
                         
-                        <div class='function-button' onClick='removeComment(this)' data-commentID='$d[comment_id]' data-ownerID='$d[comment_owner_id]'  >
+                        <div class='function-button' onClick='removeComment($d[comment_id])' >
                         // svg
                         delete
                         </div>
 
-                        <div class='function-button' onClick='editComment(this)' data-commentID='$d[comment_id]' data-ownerID='$d[comment_owner_id]'  >
+                        <div class='function-button' onClick='editComment($d[comment_id],\"$comment\")' >
                             ".'
                             <svg 
                             aria-hidden="true" 
@@ -156,6 +167,23 @@ if(mysqli_num_rows($r) == 0 ){
         ?>
     </div>
 
+
+    <!-- <div class='remove'>
+
+        <form class='remove-buttons' method='post' >
+            <input type="button" value="usuń" name='remove' >
+            <input type="button" value="anuluj usuwanie" name='remove-cancel' >
+        </form>
+    </div> -->
+
+    <div class='edit' >
+            <form class='edit-buttons' method='post' >
+                <input type="hidden" name="edit-id" class='edit-id' >
+                <input type="text" name="edit-value" class='edit-value' >
+                <input type="submit" value="zapisz zmiany" name='edit'>
+                <input type="submit" value="anuluj edytowanie" name='edit-cancel'>
+            </form>
+    </div>
 
     <script src="article.js"></script>
 

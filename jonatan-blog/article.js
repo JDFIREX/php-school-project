@@ -1,15 +1,27 @@
 
 
-const removeComment = (e) => {
-    console.log(e)
+const removeComment = (id) => {
+    console.log(id)
 }
 
 
-const editComment = (e) => {
-    console.log(e)
+
+
+
+// ---------------------------------------- comment edit
+
+const editModal = document.querySelector(".edit");
+
+
+const editComment = (id,value) => {
+    console.log(id,value)
+
+    document.querySelector(".edit-id").value = id;
+    document.querySelector(".edit-value").value = value; 
+
+
 }
-
-
+// validation
 
 // ---------------------------------------- comment validation
 
