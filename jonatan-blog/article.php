@@ -15,6 +15,13 @@ if(isset($_POST['edit'])){
 };
 
 
+if(isset($_POST['remove'])){
+    $removeID = $_POST['remove-id'];
+    $qRemove = "DELETE FROM `article_comment` WHERE `comment_id` = '$removeID' ";
+    mysqli_query($server,$qRemove);
+};
+
+
 $getArticleID = $id = $_GET['id'];
 $myarticleQ = "SELECT * from article where article_id = '$getArticleID' ";
 $r = mysqli_query($server,$myarticleQ);
@@ -40,7 +47,6 @@ if(mysqli_num_rows($r) == 0 ){
    <link rel="stylesheet" href="../main.css">
 </head>
 <body>
-<script src="article.js"></script>
    
    <?php include("../components/nav.php") ?>
 
@@ -117,9 +123,10 @@ if(mysqli_num_rows($r) == 0 ){
                     <div class='comment-function-buttons'>
                         
                         <div class='function-button' onClick='removeComment($d[comment_id])' >
-                        // svg
-                        delete
-                        </div>
+                        
+                            ".'<svg  width="16" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="trash-alt" class="svg-inline--fa fa-trash-alt fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M32 464a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48V128H32zm272-256a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zm-96 0a16 16 0 0 1 32 0v224a16 16 0 0 1-32 0zM432 32H312l-9.4-18.7A24 24 0 0 0 281.1 0H166.8a23.72 23.72 0 0 0-21.4 13.3L136 32H16A16 16 0 0 0 0 48v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16V48a16 16 0 0 0-16-16z"></path></svg>
+                            '."
+                            </div>
 
                         <div class='function-button' onClick='editComment($d[comment_id],\"$comment\")' >
                             ".'
@@ -168,20 +175,33 @@ if(mysqli_num_rows($r) == 0 ){
     </div>
 
 
-    <!-- <div class='remove'>
+    <div class='add-comment' >
+            // add new comment
+    </div>
 
+
+
+    <div class='remove'>
         <form class='remove-buttons' method='post' >
-            <input type="button" value="usuń" name='remove' >
-            <input type="button" value="anuluj usuwanie" name='remove-cancel' >
+            <h2>Potwierdź usunięcie tego komentarza</h2>
+            <input type="hidden" name="remove-id" class='remove-id' >
+            <div>
+                <input type="submit" value="usuń" name='remove' >
+                <input type="button" class='cancel-remove' value="anuluj usuwanie" name='remove-cancel' >
+            </div>
         </form>
-    </div> -->
+    </div>
 
     <div class='edit' >
             <form class='edit-buttons' method='post' >
+                <h2>Edytuj komentarz</h2>
                 <input type="hidden" name="edit-id" class='edit-id' >
                 <input type="text" name="edit-value" class='edit-value' >
-                <input type="submit" value="zapisz zmiany" name='edit'>
-                <input type="submit" value="anuluj edytowanie" name='edit-cancel'>
+                <p class='edit-value-error' >komentarz nie możę być pusty</p>
+                <div>
+                    <input type="submit" class='save-edit' value="zapisz zmiany" name='edit'>
+                    <input type="button" class='cancel-edit' value="anuluj edytowanie" name='edit-cancel'>
+                </div>
             </form>
     </div>
 

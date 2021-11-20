@@ -642,3 +642,71 @@ header{
         background-color: lightgray;
     }
 }
+
+.edit,.remove{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.253);
+    display: none;
+    justify-content: center;
+    align-items: center;
+
+    h2{
+        margin-bottom: .7rem;
+    }
+
+    .edit-value-error{
+        color :red;
+        margin: 5px 0 ;
+    }
+
+    .edit-buttons,.remove-buttons{
+        width: 500px;
+        height: auto;
+        padding: 40px 20px;
+        display: flex;
+        align-items: center;
+        justify-self: flex-start;
+        flex-direction: column;
+        border-radius: 12px;
+        background-color: white;
+
+        input{
+            width: 100%;
+            height: 40px;
+            border-radius: 25px;
+            border: 1px solid gray;
+            outline: none;
+            margin: none;
+            padding: 4px 12px;
+        }
+
+        div{
+            display: flex;
+            width: 100%;
+            gap: 30px;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            input{
+                background-color: #217121;
+                color: white;
+            }
+
+            .save-edit:disabled{
+                background-color: gray;
+            }
+
+
+        }
+
+        .edit-value-error{
+            visibility: hidden;
+        }
+
+
+    }
+}

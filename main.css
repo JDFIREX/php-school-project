@@ -782,4 +782,89 @@ header .nav a, header .logged a {
 .article_comments .comment:nth-child(odd) {
   background-color: lightgray;
 }
+
+.edit, .remove {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.253);
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.edit h2, .remove h2 {
+  margin-bottom: .7rem;
+}
+
+.edit .edit-value-error, .remove .edit-value-error {
+  color: red;
+  margin: 5px 0;
+}
+
+.edit .edit-buttons, .edit .remove-buttons, .remove .edit-buttons, .remove .remove-buttons {
+  width: 500px;
+  height: auto;
+  padding: 40px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-self: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-radius: 12px;
+  background-color: white;
+}
+
+.edit .edit-buttons input, .edit .remove-buttons input, .remove .edit-buttons input, .remove .remove-buttons input {
+  width: 100%;
+  height: 40px;
+  border-radius: 25px;
+  border: 1px solid gray;
+  outline: none;
+  margin: none;
+  padding: 4px 12px;
+}
+
+.edit .edit-buttons div, .edit .remove-buttons div, .remove .edit-buttons div, .remove .remove-buttons div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  gap: 30px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.edit .edit-buttons div input, .edit .remove-buttons div input, .remove .edit-buttons div input, .remove .remove-buttons div input {
+  background-color: #217121;
+  color: white;
+}
+
+.edit .edit-buttons div .save-edit:disabled, .edit .remove-buttons div .save-edit:disabled, .remove .edit-buttons div .save-edit:disabled, .remove .remove-buttons div .save-edit:disabled {
+  background-color: gray;
+}
+
+.edit .edit-buttons .edit-value-error, .edit .remove-buttons .edit-value-error, .remove .edit-buttons .edit-value-error, .remove .remove-buttons .edit-value-error {
+  visibility: hidden;
+}
 /*# sourceMappingURL=main.css.map */
