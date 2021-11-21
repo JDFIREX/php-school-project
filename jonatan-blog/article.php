@@ -5,13 +5,15 @@ session_start();
 
 $server = mysqli_connect('localhost','root','');
 $db = mysqli_select_db($server, 'jonatanblog');
-
+$getArticleID = $id = $_GET['id'];
 
 if(isset($_POST['edit'])){
     $editID = $_POST['edit-id'];
     $editValue = $_POST['edit-value'];
     $qEdit = "UPDATE `article_comment` SET `comment` = '$editValue' where `comment_id` = '$editID' ";
     mysqli_query($server,$qEdit);
+    $url = $_SESSION['actualLink'].'jonatan-blog/article.php?id='.$getArticleID;
+    header( "Location: $url" );
 };
 
 
@@ -19,10 +21,22 @@ if(isset($_POST['remove'])){
     $removeID = $_POST['remove-id'];
     $qRemove = "DELETE FROM `article_comment` WHERE `comment_id` = '$removeID' ";
     mysqli_query($server,$qRemove);
+    $url = $_SESSION['actualLink'].'jonatan-blog/article.php?id='.$getArticleID;
+    header( "Location: $url" );
+};
+
+if(isset($_POST['new-comment'])){
+    $user = intval($_SESSION['loggedID']);
+    $art = intval($getArticleID);
+    $newComm = $_POST['new-comment'];
+    $qNewComm = "INSERT INTO `article_comment` (`comment_for_article_id`, `comment_owner_id`, `comment`) VALUES ( $art, $user, '$newComm' )";
+    $r = mysqli_query($server,$qNewComm);
+    $url = $_SESSION['actualLink'].'jonatan-blog/article.php?id='.$getArticleID;
+    header( "Location: $url" );
 };
 
 
-$getArticleID = $id = $_GET['id'];
+
 $myarticleQ = "SELECT * from article where article_id = '$getArticleID' ";
 $r = mysqli_query($server,$myarticleQ);
 
@@ -104,6 +118,28 @@ if(mysqli_num_rows($r) == 0 ){
 
    </div>
 
+   <?php 
+   
+   
+   if(isset($_SESSION['logged']) && $_SESSION['logged'] > 0){
+       echo '
+       <div class="add-comment" >
+        <h1 >Dodaj komentarz</h1>
+            <form  method="post">
+                <input type="text" name="new-comment" class="comment-add" >
+                <p class="new-comment-error" >Komentarz nie może być pusty</p>
+                <input type="submit"  class="add" name="add-comm" value="Dodaj komentarz" >
+            </form>
+        </div>
+       ';
+   } else {
+       echo '<h3 style="padding: 0 100px 20px 100px"  >Aby zostawić komentarz musisz mieć konto</h3>';
+   };
+   
+   
+   ?>
+
+   
 
     <div class="article_comments">
         <h1>Komentarze</h1>
@@ -173,12 +209,6 @@ if(mysqli_num_rows($r) == 0 ){
         
         ?>
     </div>
-
-
-    <div class='add-comment' >
-            // add new comment
-    </div>
-
 
 
     <div class='remove'>

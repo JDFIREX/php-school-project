@@ -166,7 +166,7 @@ INSERT INTO article
         article_owner_id
 ) values (
         "Prezydent dostanie 40 proc. podwyżki. Sejm podjął decyzję",
-        "https://www.prezydent.pl/gfx/prezydent/userfiles3/images/.prezydent./do_pobrania/zaakceptowane2019/0152.jpg",
+        "https://kuchnia-marty.pl/wp-content/uploads/2016/02/5438.900.jpg",
         '{"text_1":"Sejm przyjął dwie z czterech uchwalonych przez Senat poprawek do ustawy o wynagrodzeniu osób zajmujących kierownicze stanowiska państwowe. Poprawki te dotyczą doprecyzowania niektórych zasad naliczania wynagrodzeń. Ustawa przyznaje podwyżki m.in. samorządowcom oraz prezydentowi. Głowa państwa zarobi dzięki nim o 40 proc. więcej.Podczas piątkowych obrad Sejm głosował nad przyjęciem bądź odrzuceniem zgłoszonych przez Senat poprawek do uchwalonej w sierpniu nowelizacji ustawy o wynagrodzeniu osób zajmujących kierownicze stanowiska państwowe. Sejmowa Komisja Finansów publicznych zaopiniowała przyjęcie dwóch z czterech senackich poprawek, które doprecyzowały zasady naliczania wynagrodzeń dla wymienionych w ustawie osób zajmujących kierownicze stanowiska państwowe. Nowelizacja ustawy o wynagrodzeniu osób zajmujących kierownicze stanowiska państwowe została uchwalona przez Sejm 11 sierpnia. Dokonuje ona zmian w systemie wynagradzania prezydenta oraz byłych prezydentów, a także zasad ustalania maksymalnej wysokości diet lub wynagrodzeń w samorządzie terytorialnym wszystkich szczebli."}',
         5,
         '2021-05-20',
@@ -185,7 +185,7 @@ INSERT INTO article
         article_owner_id
 ) values (
         "Sposób na ślimaka. Jak się go pozbyć z ogrodu?",
-        "https://www.prezydent.pl/gfx/prezydent/userfiles3/images/.prezydent./do_pobrania/zaakceptowane2019/0152.jpg",
+        "https://kuchnia-marty.pl/wp-content/uploads/2016/02/5438.900.jpg",
         '{"text_1":"Zacznijmy od tego, że nie wszystkie ślimaki można uznać za szkodniki. Te z muszelkami są raczej niegroźne. Większość jest nawet pod ochroną. Natomiast głównymi niszczycielami naszych grządek i klombów są ślimaki nagie lądowe, których w Polsce żyje około 30 gatunków. Co ciekawe one też posiadają skorupę. Ukrytą wewnątrz ciała, pod skórą. Naukowe nazwy najbardziej łakomych to m.in. ślinik pospolity i wielki, pomrowik plamisty. Jak je rozpoznać? Ślinik pospolity (Arion vulgaris) – nierzadko mylnie opisywany jako ślinik luzytański, który w Polsce nie występuje) – jako dorosły osobnik ma zwykle ceglaste aż po brunatne ubarwienie (kolor zależy od jedzenia i miejsca bytowania) i może osiągnąć nawet 12 centymetrów długości. Bardzo podobny i dla laika trudny do odróżnienia jest ślinik wielki (Arion rufus), ale jest większy i może mierzyć do 15 centymetrów. Pomrowik plamisty (Deroceras reticulatum) ma maksymalnie 4,5 centymetra długości, zabarwienie kremowe, a jego znakami rozpoznawczymi są brunatne lub czarne plamki zarówno na płaszczu, jak i po bokach."}',
         4,
         '2021-07-20',
@@ -204,7 +204,7 @@ INSERT INTO article
         article_owner_id
 ) values (
         "Wampir z Krakowa - potwór, przed którym drżało całe miasto",
-        "https://www.prezydent.pl/gfx/prezydent/userfiles3/images/.prezydent./do_pobrania/zaakceptowane2019/0152.jpg",
+        "https://kuchnia-marty.pl/wp-content/uploads/2016/02/5438.900.jpg",
         '{"text_1":"Karol Kot urodził się 18 grudnia 1946 r. w Krakowie. Wychowywał się w inteligenckiej rodzinie na krakowskim Kazimierzu, w kamienicy nr 2 przy ul. Meiselsa. Karol nie chodził do przedszkola, ponieważ rodziców stać było na to, aby uczyć go samodzielnie. Chłopca, między pracą a domowymi obowiązkami, wychowywała matka. Kiedy Karol skończył osiem lat, na świat przyszła jego młodsza siostra. Karol od momentu, kiedy zauważył, że rodzice zaczęli ją faworyzować, regularnie znęcał się nad swoją siostrą. Był to czas, w którym Karol po raz pierwszy zaczął używać przemocy wobec drugiego człowieka. Czując się niekochany przez rodziców, chłopiec zaczął uciekać w świat chorych fantazji o znęcaniu się nad kobietami."}',
         4,
         '2021-02-20',
@@ -224,7 +224,7 @@ INSERT INTO article
         article_owner_id
 ) values (
         "Szef OZZL: Będą nas leczyli ludzie, którzy są 60 godzinę w pracy",
-        "https://www.prezydent.pl/gfx/prezydent/userfiles3/images/.prezydent./do_pobrania/zaakceptowane2019/0152.jpg",
+        "https://kuchnia-marty.pl/wp-content/uploads/2016/02/5438.900.jpg",
         '{"text_1":"Niech pójdą do jakiegoś szpitala i powiedzą to lekarzom prosto w twarz. W szpitalnictwie jest tak mało pieniędzy, że cudem jest, iż to jeszcze funkcjonuje. Nie ma mydła w łazienkach, klimatyzacja w gabinetach lekarskich, a nieraz nawet na salach operacyjnych jest luksusem. Cieszymy się, że jest papier toaletowy. Lekarze zatrudnieni na umowę o pracę otrzymują zatem - podobnie jak ja - minimalną płacę ustawową dla lekarzy, czyli obecnie 6769 zł pensji zasadniczej. Minister zdrowia Adam Niedzielski w wywiadzie z WP wskazał, że lekarz zarabia średnio 25 tys. zł miesięcznie, a mediana wynosi 16,6 tys. zł miesięcznie. Godnie. Klasyczna manipulacja. Minister zdrowia podaje dane z PIT-ów, w których uwzględnione są zarobki ze wszystkich źródeł. W tej statystyce są uwzględnieni też przedsiębiorcy-lekarze, np. właściciele klinik. Ale przecież nikt nie mówi, że lekarz nie jest w stanie dobrze zarobić. My mówimy, że lekarz, aby dobrze zarobić, musi pracować po 300-350 godzin miesięcznie. Musi pracować w kilku miejscach, dorabiać. Być cały czas zmęczony."}',
         1,
         '2019-02-20',
@@ -243,7 +243,7 @@ INSERT INTO article
         article_owner_id
 ) values (
         "Mocny komentarz po brązowym medalu Polaków. 'Sukcesu nie odnieśliśmy' ",
-        "https://www.prezydent.pl/gfx/prezydent/userfiles3/images/.prezydent./do_pobrania/zaakceptowane2019/0152.jpg",
+        "https://kuchnia-marty.pl/wp-content/uploads/2016/02/5438.900.jpg",
         '{"text_1":"To, co przede wszystkim zostanie w pamięci polskich kibiców, to efektowna wygrana 3:0 z Serbami na koniec turnieju. Olbrzymie wrażenie zrobiło też pewne zwycięstwo z Rosjanami. Reprezentacja Polski podczas całego turnieju, którego była współgospodarzem, przegrała tyko jedno spotkanie. W półfinale ze Słowenią - 1:3. Jednak to właśnie ta porażka sprawiła, że Polacy nie mogli walczyć w meczu o tytuł. - Obecny trener bądź jego następca musi się zastanowić, czy drużyna dotrwa w takiej formie do igrzysk za trzy lata. Mamy najlepszych zawodników na świecie, a w pewnych momentach nie stanowią drużyny. Czy w takiej formie ten zespół przetrwa? Może być kłopot - twierdzi Bosek w rozmowie z WP SportoweFakty."}',
         2,
         '2020-03-20',
@@ -262,7 +262,7 @@ INSERT INTO article
         article_owner_id
 ) values (
         "Kradną paliwo na stacjach. 'Zatankował za 800 zł, zapłacił za hot doga i odjechał' ",
-        "https://www.prezydent.pl/gfx/prezydent/userfiles3/images/.prezydent./do_pobrania/zaakceptowane2019/0152.jpg",
+        "https://kuchnia-marty.pl/wp-content/uploads/2016/02/5438.900.jpg",
         '{"text_1":"Są stacje na których, do kradzieży paliwa dochodzi nagminnie, nawet trzy - cztery razy w miesiącu. Kierowca podjeżdża, tankuje do pełna, zakręci się na stacji, czasem nawet kupi jakiś drobiazg. Wraca do auta i odjeżdża. Według danych Polskiej Organizacji Przemysłu i Handlu Naftowego w Polsce co roku dochodzi do około 100 tysięcy przypadków kradzieży na stacjach benzynowych, w tym tzw. sklepowych. Łupem złodziei pada paliwo o wartości 20 mln zł. - Robią to \\"na bezczela\\". Maseczka na twarzy, w końcu pandemia. Okulary, bo słońce w drodze przeszkadza. Kiedyś to przykręcali kradzione tablice, albo zaklejali je fałszywymi numerami, teraz nawet tego się im nie chce. Jeśli nawet stacja ma monitoring, to na niewiele się zda. Karalność jest tak niska, że złodzieje się nie boją - relacjonuje pan Tomasz, kierownik kilku stacji prywatnej sieci na Dolnym Śląsku."}',
         5,
         '2021-07-20',
@@ -281,7 +281,7 @@ INSERT INTO article
         article_owner_id
 ) values (
         "'To nowość w występach Szczęsnego'. Włosi piszą o cudzie z udziałem polskiego bramkarza",
-        "https://www.prezydent.pl/gfx/prezydent/userfiles3/images/.prezydent./do_pobrania/zaakceptowane2019/0152.jpg",
+        "https://kuchnia-marty.pl/wp-content/uploads/2016/02/5438.900.jpg",
         '{"text_1":"Po serii niezbyt udanych meczów, polski bramkarz znów przypomniał fanom Juventusu, że jest fachowcem w swojej pracy. Zresztą ci przywitali go niezwykle gorąco przed klasykiem Serie A z Milanem (1:1). \\"Stara Dama\\" doskonale zaczęła, bo już w 4 minucie trafił Alvaro Morata. Długo goście nie mogli doprowadzić do remisu. Udało się to po trafieniu Ante Rebicia po rzucie rożnym w 76. minucie - Szczęsny był bez szans."}',
         3,
         '2021-04-23',
@@ -300,7 +300,7 @@ INSERT INTO article
         article_owner_id
 ) values (
         " 'Fakty' inne niż zwykle. Wyraźny sygnał dla widzów TVN24",
-        "https://www.prezydent.pl/gfx/prezydent/userfiles3/images/.prezydent./do_pobrania/zaakceptowane2019/0152.jpg",
+        "https://kuchnia-marty.pl/wp-content/uploads/2016/02/5438.900.jpg",
         '{"text_1":"Prowadząca \\"Faktów\\" Diana Rudnik w niedzielę 18 września zakończyła wydanie inaczej niż zwykle. Dziennikarka przypomniała,że do wygaśnięcia koncesji TVN24 pozostał tydzień. Po chwili na ekranach pojawiła się czarna plansza z tą informacją. Przypomnijmy, że TVN24 od 19 miesięcy zabiega, aby Krajowa Radia Radiofonii i Telewizji przyznała jej rekoncesję. Oficjalnie 26 września dotychczasowa koncesja straci ważność. Włodarze stacji zadbali już o pozyskanie holenderskiej koncesji, która miałaby umożliwić im kontynuowanie nadawania, lecz cały czas oczekują na decyzję polskiego podmiotu."}',
         1,
         '2020-09-20',
@@ -319,7 +319,7 @@ INSERT INTO article
         article_owner_id
 ) values (
         "Wybory w Rosji. Rośnie wynik partii Putina. Opozycja: oszustwo",
-        "https://www.prezydent.pl/gfx/prezydent/userfiles3/images/.prezydent./do_pobrania/zaakceptowane2019/0152.jpg",
+        "https://kuchnia-marty.pl/wp-content/uploads/2016/02/5438.900.jpg",
         '{"text_1":"Po przeliczeniu 70 proc. głosów w wyborach do Dumy Państwowej rządząca partia Jedna Rosja zdobywa ponad 48 proc. głosów. Do parlamentu wejdą jeszcze cztery partie. Na drugim miejscu jest Komunistyczna Partia Federacji Rosyjskiej, której przypadło ok. 20 proc. głosów. Kolejne miejsca zajmują: populistyczno-nacjonalistyczna Liberalno-Demokratyczna Partia Rosji, dowodzona przez Władimira Żyrinowskiego (niecałe 8 proc.), Sprawiedliwa Rosja (ok. 7,5 proc. głosów) i partia Nowi Ludzie (nieco ponad 5 proc.). Opozycja skupiona wokół Aleksieja Nawalnego mówi o oszustwie wyborczym."}',
         1,
         '2020-11-20',
@@ -338,7 +338,7 @@ INSERT INTO article
         article_owner_id
 ) values (
         "Ojciec Andrzeja Dudy o homoseksualizmie. Lawina komentarzy",
-        "https://www.prezydent.pl/gfx/prezydent/userfiles3/images/.prezydent./do_pobrania/zaakceptowane2019/0152.jpg",
+        "https://kuchnia-marty.pl/wp-content/uploads/2016/02/5438.900.jpg",
         '{"text_1":" \\"Człowiek powinien pracować nad sobą, zdawać sobie sprawę z tego, jakie są konsekwencje jego uwarunkowań naturalnych i starać się wykorzystać predyspozycje biologiczne, by osiągać to, czego większość z nas chce, czyli mieć ciepły dom, dzieci, rodzinę\\" - mówił w wywiadzie dla \\"Newsweeka\\" prof. Jan Duda, przewodniczący Sejmiku Województwa Małopolskiego, a prywatnie ojciec prezydenta Andrzeja Dudy. Powołał się na badanie, opublikowane w \\"Science Magazine\\", z którego wynika, że tylko od 8 do 25 proc. osób uzasadnia swoje skłonności nieheteronormatywne przyczynami genetycznymi, reszta ma zależeć od czynników kulturalnych lub związanych z hormonami. Na tej podstawie stwierdził, że \\"czynniki kulturowe to efekty promowania tych skłonności\\". \\"Po prostu homoseksualizm jest w znacznym stopniu zjawiskiem zaraźliwym. Twierdzenie, że płeć to jest kwestia wyboru, które staje się u nas modne, utrudnia dzieciom rozwój psychofizyczny \\"- mówił dalej."}',
         1,
         '2021-05-20',
@@ -357,7 +357,7 @@ INSERT INTO article
         article_owner_id
 ) values (
         "Doskonały przepis na ziemniaki pieczone w jogurcie",
-        "https://www.prezydent.pl/gfx/prezydent/userfiles3/images/.prezydent./do_pobrania/zaakceptowane2019/0152.jpg",
+        "https://kuchnia-marty.pl/wp-content/uploads/2016/02/5438.900.jpg",
         '{"text_1":"Propozycja na pyszny obiad lub kolację bez ani grama tłuszczu. Tak przygotowane ziemniaki są też idealnym dodatkiem do każdego mięsa. Sekretnym składnikiem tego dnia jest jogurt naturalny, w którym obtacza się warzywo przed upieczeniem. Potrzebny będzie także rękaw do pieczenia. Ważne jest, aby nożykiem zrobić kilka malutkich dziurek w folii. Następnie wstawiamy do piekarnika rozgrzanego do 180 stopni z termoobiegiem i pieczemy przez ok 45 min. Rozcinamy rękaw od góry i pieczemy jeszcze ok 15-20 minut. Wszystko do momentu aż ziemniaki się ładnie przyrumienią. I gotowe! Chcesz poznać więcej przepisów, zajrzyj na Swojskie jedzonko.","text_2":"Propozycja na pyszny obiad lub kolację bez ani grama tłuszczu. Tak przygotowane ziemniaki są też idealnym dodatkiem do każdego mięsa. Sekretnym składnikiem tego dnia jest jogurt naturalny, w którym obtacza się warzywo przed upieczeniem. Potrzebny będzie także rękaw do pieczenia. Ważne jest, aby nożykiem zrobić kilka malutkich dziurek w folii. Następnie wstawiamy do piekarnika rozgrzanego do 180 stopni z termoobiegiem i pieczemy przez ok 45 min. Rozcinamy rękaw od góry i pieczemy jeszcze ok 15-20 minut. Wszystko do momentu aż ziemniaki się ładnie przyrumienią. I gotowe! Chcesz poznać więcej przepisów, zajrzyj na Swojskie jedzonko."}',
         2,
         '2021-02-20',

@@ -4,7 +4,7 @@ session_start();
 
 if(!($_SESSION['logged'])){
     $actual_link = "http://$_SERVER[HTTP_HOST]";
-    $url = $actual_link."/j";
+    $url = $actual_link."/j/jonatan-blog/main.php";
     header( "Location: $url" );
 }
 
@@ -18,14 +18,14 @@ $r = mysqli_query($server,$myarticleQ);
 while($d = mysqli_fetch_array($r)){
     if($d['article_owner_id'] != $_SESSION['loggedID'] ){
         $actual_link = "http://$_SERVER[HTTP_HOST]";
-        $url = $actual_link."/j";
+        $url = $actual_link."/j/jonatan-blog/main.php";
         header( "Location: $url" );
     }
 }
 
 if(mysqli_num_rows($r) == 0 ){
     $actual_link = "http://$_SERVER[HTTP_HOST]";
-    $url = $actual_link."/j";
+    $url = $actual_link."/j/jonatan-blog/main.php";
     header( "Location: $url" );
 };
 ?>

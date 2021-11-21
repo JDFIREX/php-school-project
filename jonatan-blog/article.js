@@ -55,11 +55,35 @@ editValueModal.addEventListener("input", (e) => {
     }
 
 
-})
+});
 
 
 // ---------------------------------------- comment create validation
 
 
 // const submitComment;
-const commetValid = false;
+let commetValid = false;
+const comment = document.querySelector('.comment-add');
+
+const errorMes = document.querySelector(".new-comment-error");
+
+comment.addEventListener('input', (e) => {
+    if(e.target.value.length > 0){
+        commetValid = true;
+        errorMes.style.visibility = 'hidden';
+    } else {
+        commetValid = false;
+        errorMes.style.visibility = 'visible';
+    }
+
+    blockButton();
+})
+
+
+const blockButton = () => {
+    const button = document.querySelector(".add");
+
+    button.disabled = !commetValid;
+}
+
+blockButton()
